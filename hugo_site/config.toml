@@ -52,8 +52,8 @@ googleAnalytics = ""
   url = "about/"
 
   [[params.navlinks]]
-  name = "Contact & CV"
-  url = "contact/"
+  name = "CV"
+  url = "https://github.com/norabradford/Nora-Bradford-CV/raw/main/Nora_Bradford_CV.pdf"
 
   [params.social]
   # facebook      = "full page or profile url in facebook"
