@@ -15,7 +15,7 @@ googleAnalytics = ""
   # Style options: default (pink), blue, green, pink, red, sea, violet
   # Use custom.css for your custom styling
   style = "default"
-  description = "Hello world testing"
+  description = "Personal website for Nora Bradford"
   copyright = "&copy;2022 Nora Bradford"
   sidebarAbout = [
     "I am a Cognitive Science PhD student at the University of California, Irvine.",
