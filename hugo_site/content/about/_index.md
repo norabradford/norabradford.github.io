@@ -2,16 +2,8 @@
 title = "About me"
 +++
 
-Hi im nora lol
+Hi there! I'm a second-year cognitive science PhD student at UC Irvine where I study metacognition and learning. I'm also passionate about science writing and outreach.
 
 ![This is me][1]
-
-We are testing.
-
-#### Education
-
-* Practically none.
-* Can be mean (good tho).
-
 
 [1]: /img/about.jpg 
