@@ -6,14 +6,32 @@
     <description>Recent content in Portfolios on Nora Bradford</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 22 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://norabradford.github.io/portfolio/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 03 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://norabradford.github.io/portfolio/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Bee Building blocks</title>
-      <link>https://norabradford.github.io/portfolio/bees/</link>
-      <pubDate>Mon, 22 Nov 2021 00:00:00 +0000</pubDate>
+      <title>#WhyIScience: Naeem Nadaf</title>
+      <link>https://norabradford.github.io/portfolio/researchmethods/</link>
+      <pubDate>Tue, 03 May 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://norabradford.github.io/portfolio/bees/</guid>
-      <description>&lt;p&gt;Using a newly developed method, researchers have discovered more movement of key antibiotic resistance genes within hospitals than previously thought.&lt;/p&gt;</description>
+      <guid>https://norabradford.github.io/portfolio/researchmethods/</guid>
+      <description>&lt;p&gt;Meet a research associate with a passion for perfecting research methods.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Repeated UTIs may stem from a disrupted microbiome</title>
+      <link>https://norabradford.github.io/portfolio/utis/</link>
+      <pubDate>Mon, 02 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://norabradford.github.io/portfolio/utis/</guid>
+      <description>&lt;p&gt;Broad researchers discover that changes in immune responses and the gut microbial community could underlie repeated occurrences of these common infections.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>The Loh Down on Science</title>
+      <link>https://norabradford.github.io/portfolio/lohdown/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://norabradford.github.io/portfolio/lohdown/</guid>
+      <description>&lt;p&gt;Check out my episodes!&lt;/p&gt;</description>
     </item>
     
   </channel>
