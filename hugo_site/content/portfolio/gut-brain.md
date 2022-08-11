@@ -1,5 +1,5 @@
 +++
-date = "2022-07-07"
+date = "2022-07-06"
 title = "That’s Your Stomach Talking: Grass Fellow Studies Gut-Brain Link"
 draft = false
 image = "img/portfolio/Maya.jpeg"
