@@ -8,6 +8,6 @@ weight = 1
 +++
 Whitman Fellow Shines Light on Unique Symbiosis
 <!--more-->
-If you are not redirected automatically, follow <a href='https://www.broadinstitute.org/news/repeated-urinary-tract-infections-may-stem-disrupted-microbiome'> this link</a>.
+If you are not redirected automatically, follow <a href='https://www.mbl.edu/news/cellular-collaboration-whitman-fellow-shines-light-unique-symbiosis'> this link</a>.
 
 <meta http-equiv="refresh" content="0; url=https://www.mbl.edu/news/cellular-collaboration-whitman-fellow-shines-light-unique-symbiosis"> 

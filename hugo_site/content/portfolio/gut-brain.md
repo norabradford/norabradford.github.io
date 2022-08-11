@@ -4,7 +4,7 @@ title = "That’s Your Stomach Talking: Grass Fellow Studies Gut-Brain Link"
 draft = false
 image = "img/portfolio/Maya.jpeg"
 showonlyimage = false
-weight = 1
+weight = 4
 +++
 Grass Fellow Maya Kaelberer wants to listen in on brain-gut communication. <!--more-->
 
