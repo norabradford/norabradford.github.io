@@ -4,7 +4,7 @@ title = "The Evolution of Evo-Devo"
 draft = false
 image = "img/portfolio/evodevo.jpg"
 showonlyimage = false
-weight = 1
+weight = 4
 +++
 Evo-devo scientists investigate how animal embryos develop, which allows them to make inferences about evolutionary change.
 <!--more-->

@@ -4,7 +4,7 @@ title = "Cellular Collaboration"
 draft = false
 image = "img/portfolio/sten.gif"
 showonlyimage = false
-weight = 1
+weight = 3
 +++
 Whitman Fellow Shines Light on Unique Symbiosis
 <!--more-->

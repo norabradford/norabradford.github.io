@@ -4,7 +4,7 @@ title = "#WhyIScience: Naeem Nadaf"
 draft = false
 image = "img/portfolio/broad.jpg"
 showonlyimage = false
-weight = 1
+weight = 6
 +++
 Meet a research associate with a passion for perfecting research methods.
 <!--more-->

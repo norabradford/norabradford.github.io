@@ -4,7 +4,7 @@ title = "Repeated UTIs may stem from a disrupted microbiome"
 draft = false
 image = "img/portfolio/UTI.jpg"
 showonlyimage = false
-weight = 2
+weight = 5
 +++
 Broad researchers discover that changes in immune responses and the gut microbial community could underlie repeated occurrences of these common infections.
 <!--more-->

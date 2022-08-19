@@ -4,7 +4,7 @@ title = "Study finds new patterns of antibiotic resistance spread in hospitals"
 draft = false
 image = "img/portfolio/AntibioticResistance.jpg"
 showonlyimage = false
-weight = 3
+weight = 6
 +++
 Using a newly developed method, researchers have discovered more movement of key antibiotic resistance genes within hospitals than previously thought.
 <!--more-->

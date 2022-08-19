@@ -4,7 +4,7 @@ title = "What Can Frogs Tell Us About Childhood Adversity?"
 draft = false
 image = "img/portfolio/frog.jpg"
 showonlyimage = false
-weight = 1
+weight = 3
 +++
 Sally Seraphin is using red-eyed tree frogs as a model for studying adverse childhood experiences 
 <!--more-->
