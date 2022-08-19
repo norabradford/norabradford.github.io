@@ -10,4 +10,4 @@ Striped bass in MBL's Eel Pond are helping inaugural MBL Barbey Fellow Brian Pre
 <!--more-->
 If you are not redirected automatically, follow <a href='https://www.mbl.edu/news/telling-time-eel-ponds-striped-bass-help-mbl-scientists-characterize-biological-rhythms'> this link</a>.
 
-<meta http-equiv="refresh" content="0; url="https://www.mbl.edu/news/telling-time-eel-ponds-striped-bass-help-mbl-scientists-characterize-biological-rhythms"> 
+<meta http-equiv="refresh" content="0; url=https://www.mbl.edu/news/telling-time-eel-ponds-striped-bass-help-mbl-scientists-characterize-biological-rhythms"> 
