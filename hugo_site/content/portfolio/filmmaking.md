@@ -2,7 +2,7 @@
 date = "2021-10-19"
 title = "The changing landscape of science filmmaking"
 draft = false
-image = "img/portfolio/ScienceFilmmaking.png"
+image = "img/portfolio/ScienceFilmmaking.jpg"
 showonlyimage = false
 weight = 10
 +++
