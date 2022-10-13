@@ -4,7 +4,7 @@ title = "About me"
 
 I'm a third-year cognitive science (with a concentration in cognitive neuroscience) PhD student at UC Irvine where I study metacognition and learning with Dr. Megan Peters and Dr. Barbara Sarnecka. 
 
-<img src="/img/about.jpg " alt="This is me" style="float:right;width:400"/>
+<img src="/img/about.jpg " alt="This is me" width = 400 style=float:right/>
 
 Summary of my research for the [CNLM Weinberger Award](https://cnlm.uci.edu/awards/weinberger):
 
