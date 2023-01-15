@@ -2,7 +2,9 @@
 title = "About me"
 +++
 
-I'm a third-year cognitive science (with a concentration in cognitive neuroscience) PhD student at UC Irvine where I study metacognition and learning with Dr. Megan Peters and Dr. Barbara Sarnecka. 
+I'm a third-year cognitive science (with a concentration in cognitive neuroscience) PhD student at UC Irvine where I study metacognition and learning with Dr. Megan Peters. 
+
+Check out my UPenn LPS profile [here](https://www.lps.upenn.edu/non-degree-programs/postbacc-studies/stories/nora-ashley-bradford) and an alumni update post from the UChicago Neuro club [here](https://neuroclubuchicago.squarespace.com/blog/alumni-updates-nora-bradford-a95dp-m9r3c)
 
 <img src="/img/about.jpg " alt="This is me" width = 400 style=float:right/>
 
@@ -12,7 +14,7 @@ Throughout my academic career, I have sought answers to questions such as “how
 
 After dipping my toes in human research, I was inspired to conduct projects of my own, so I started a PhD in Cognitive Neuroscience at UCI with Dr. Megan Peters and Dr. Barbara Sarnecka. I investigate how humans evaluate their own thoughts, perceptions, and performance, otherwise known as metacognition. Specifically, my research focuses on how metacognition interacts with learning and whether metacognition can be improved through training. Using secondary data, I investigate the accuracy of undergraduate students’ metacognitive judgements and how it interacts with learning over time. I adapt statistical tools inspired by the psychophysics literature to disentangle students’ metacognition from their performance in a way that has not yet been done in education research. In the fall, I presented this work at the Neuromatch conference and I plan to present related work at the Association for the Scientific Study of Consciousness this summer. 
 
-I am also currently working as a graduate student researcher for the Digital Learning Lab run by Dr. Mark Warshauer in the School of Education. Through this position, I have contributed to work (1) exploring the effects of transparency in technology design on users' perceptions and (2) reviewing child-focused technology designed to prompt reflection.
+I also worked as a graduate student researcher for the Digital Learning Lab run by Dr. Mark Warshauer in the School of Education. Through this position, I contributed to work (1) exploring the effects of transparency in technology design on users' perceptions and (2) reviewing child-focused technology designed to prompt reflection.
 
-Check out my UPenn LPS profile [here](https://www.lps.upenn.edu/non-degree-programs/postbacc-studies/stories/nora-ashley-bradford).
+
 

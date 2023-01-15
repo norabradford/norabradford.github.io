@@ -18,9 +18,7 @@ googleAnalytics = ""
   description = "Personal website for Nora Bradford"
   copyright = "&copy;2022 Nora Bradford"
   sidebarAbout = [
-    "I am a Cognitive Science PhD student at the University of California, Irvine.",
-    "Science writer and communicator.",
-    "Originally from Lexington, MA."
+    "Science writer and cognitive science PhD student at the University of California, Irvine."
   ]
   # Contact page
      # Since this template is static, the contact form uses www.formspree.io as a
