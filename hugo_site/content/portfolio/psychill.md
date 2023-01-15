@@ -6,7 +6,7 @@ image = "img/portfolio/psychill.jpg"
 showonlyimage = false
 weight = 1
 +++
-Spectrum News
+Brigham and Women's Hospital
 <!--more-->
 A new study by investigators from Brigham and Women’s Hospital investigated four pre-existing, publicly available neurological and psychiatric datasets, and pinpointed a network of brain areas underlying psychiatric illnesses. 
 If you are not redirected automatically, follow <a href='https://www.brighamandwomens.org/about-bwh/newsroom/press-releases-detail?id=4330'> this link</a>.
