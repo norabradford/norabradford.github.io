@@ -2,7 +2,7 @@
 date = "2022-02-03"
 title = "Researchers identify new target for treatment of aggressive childhood brain tumors"
 draft = false
-image = "img/portfolio/DMG.jpg"
+image = "img/portfolio/DMG.jpeg"
 showonlyimage = false
 weight = 5
 +++
