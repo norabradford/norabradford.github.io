@@ -4,7 +4,7 @@ title = "Repeated UTIs may stem from a disrupted microbiome"
 draft = false
 image = "img/portfolio/UTI.jpg"
 showonlyimage = false
-weight = 3
+weight = 6
 +++
 Broad Institute of MIT and Harvard
 <!--more-->

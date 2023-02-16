@@ -4,7 +4,7 @@ title = "Researchers identify new target for treatment of aggressive childhood b
 draft = false
 image = "img/portfolio/DMG.jpeg"
 showonlyimage = false
-weight = 5
+weight = 6
 +++
 Broad Institute of MIT and Harvard
 <!--more-->

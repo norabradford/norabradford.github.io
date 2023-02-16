@@ -4,7 +4,7 @@ title = "Live Fast, Die Young: Grass Fellow Explores Octopus's Death Spiral"
 draft = false
 image = "img/portfolio/Yan.jpg"
 showonlyimage = false
-weight = 4
+weight = 5
 +++
 Marine Biological Laboratory
 <!--more-->

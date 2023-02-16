@@ -4,7 +4,7 @@ title = "Time flies when you’re in lockdown"
 draft = false
 image = "img/portfolio/TimeStory.png"
 showonlyimage = false
-weight = 7
+weight = 9
 +++
 National Association of Science Writers Student Newsroom
 <!--more-->

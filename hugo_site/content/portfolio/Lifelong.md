@@ -4,7 +4,7 @@ title = "Lifelong Learners from UChicago’s Graham School Attend MBL Program"
 draft = false
 image = "img/portfolio/Lifelong.jpg"
 showonlyimage = false
-weight = 6
+weight = 8
 +++
 Marine Biological Laboratory
 <!--more-->

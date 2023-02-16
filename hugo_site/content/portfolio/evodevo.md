@@ -4,7 +4,7 @@ title = "The Evolution of Evo-Devo"
 draft = false
 image = "img/portfolio/evodevo.jpg"
 showonlyimage = false
-weight = 4
+weight = 6
 +++
 Marine Biological Laboratory
 <!--more-->

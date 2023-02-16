@@ -4,7 +4,7 @@ title = "Auditory cortex may develop early in autism"
 draft = false
 image = "img/portfolio/MEG.jpg"
 showonlyimage = false
-weight = 1
+weight = 3
 +++
 Spectrum News
 <!--more-->

@@ -4,7 +4,7 @@ title = "That’s Your Stomach Talking: Grass Fellow Studies Gut-Brain Link"
 draft = false
 image = "img/portfolio/Maya.jpeg"
 showonlyimage = false
-weight = 4
+weight = 6
 +++
 Marine Biological Laboratory
 <!--more-->

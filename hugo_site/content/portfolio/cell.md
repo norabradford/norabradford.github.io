@@ -4,7 +4,7 @@ title = "Cellular Collaboration: Whitman Fellow Shines Light on Unique Symbiosis
 draft = false
 image = "img/portfolio/sten.gif"
 showonlyimage = false
-weight = 4
+weight = 5
 +++
 Marine Biological Laboratory
 

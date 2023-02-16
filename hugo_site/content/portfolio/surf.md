@@ -4,7 +4,7 @@ title = "How local surfers can help scientists with ocean restoration"
 draft = false
 image = "img/portfolio/surf.jpg"
 showonlyimage = false
-weight = 5
+weight = 10
 +++
 Southern California News Group
 <!--more-->

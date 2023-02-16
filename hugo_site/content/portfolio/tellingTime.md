@@ -4,7 +4,7 @@ title = "Telling Time: Eel Pond’s Striped Bass Help MBL Scientists Characteriz
 draft = false
 image = "img/portfolio/tellingTime.jpg"
 showonlyimage = false
-weight = 6
+weight = 7
 +++
 Marine Biological Laboratory
 <!--more-->

@@ -3,7 +3,7 @@ title = "The Loh Down on Science"
 draft = false
 image = "img/portfolio/LohDown.jpg"
 showonlyimage = false
-weight = 10
+weight = 11
 +++
 Check out my episodes!
 <!--more-->

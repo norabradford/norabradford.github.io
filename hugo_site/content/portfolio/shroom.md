@@ -4,7 +4,7 @@ title = "Research on Psychedelics and How Mushrooms Can Help Combat Depression"
 draft = false
 image = "img/portfolio/shroom.jpg"
 showonlyimage = false
-weight = 1
+weight = 2
 +++
 Discover
 <!--more-->
