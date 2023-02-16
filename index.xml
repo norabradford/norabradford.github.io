@@ -6,7 +6,7 @@
     <description>Recent content on Nora Bradford</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 14 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://norabradford.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 16 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://norabradford.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How Octopus Arms Bypass the Brain</title>
       <link>https://norabradford.github.io/portfolio/octoanat/</link>
@@ -68,6 +68,15 @@
       
       <guid>https://norabradford.github.io/portfolio/neurodev/</guid>
       <description>&lt;p&gt;Marine Biological Laboratory&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Epigenome edits unmute MECP2 in Rett-like neurons</title>
+      <link>https://norabradford.github.io/portfolio/mecp2/</link>
+      <pubDate>Thu, 16 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://norabradford.github.io/portfolio/mecp2/</guid>
+      <description>&lt;p&gt;Spectrum&lt;/p&gt;</description>
     </item>
     
     <item>
