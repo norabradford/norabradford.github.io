@@ -4,7 +4,7 @@ title = "After Spinal Cord Injury, Kinesthetic Sense Helps Restore Movement, Mod
 draft = false
 image = "img/portfolio/lamprey.gif"
 showonlyimage = false
-weight = 2
+weight = 3
 +++
 Marine Biological Laboratory
 <!--more-->

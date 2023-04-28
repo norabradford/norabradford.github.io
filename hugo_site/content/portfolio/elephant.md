@@ -4,7 +4,7 @@ title = "This elephant peels bananas, but only slightly ripe ones"
 draft = false
 image = "img/portfolio/elephant.png"
 showonlyimage = false
-weight = 1
+weight = 2
 +++
 Science News
 <!--more-->

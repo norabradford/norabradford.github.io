@@ -4,7 +4,7 @@ title = "Scientists have now recorded brain waves from freely moving octopuses"
 draft = false
 image = "img/portfolio/octoWaves.jpg"
 showonlyimage = false
-weight = 1
+weight = 2
 +++
 Science News
 <!--more-->
