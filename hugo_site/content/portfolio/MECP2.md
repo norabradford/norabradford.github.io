@@ -4,7 +4,7 @@ title = "Epigenome edits unmute MECP2 in Rett-like neurons"
 draft = false
 image = "img/portfolio/MECP2.png"
 showonlyimage = false
-weight = 2
+weight = 3
 +++
 Spectrum
 <!--more-->
