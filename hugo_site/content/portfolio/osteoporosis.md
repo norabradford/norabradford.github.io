@@ -1,5 +1,5 @@
 +++
-date = "2023-04-20"
+date = "2023-04-28"
 title = "One small molecule may transform osteoporosis treatment"
 draft = false
 image = "img/portfolio/osteoporosis.jpg"
