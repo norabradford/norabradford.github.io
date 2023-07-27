@@ -2,7 +2,7 @@
 date = "2020-07-13"
 title = "Episode 127: Nic Koziolek discusses self-knowledge"
 draft = false
-image = "img/portfolio/elucidations.png"
+image = "img/portfolio/elucidations.jpg"
 showonlyimage = false
 weight = 10
 +++
