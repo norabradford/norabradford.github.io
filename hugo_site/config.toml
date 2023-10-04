@@ -18,7 +18,7 @@ googleAnalytics = ""
   description = "Personal website for Nora Bradford"
   copyright = "&copy;2022 Nora Bradford"
   sidebarAbout = [
-    "Science writer and cognitive science PhD student at the University of California, Irvine. Follow me on [bluesky](https://bsky.app/profile/norabradford.bsky.social)"]
+    "Science writer and cognitive science PhD student at the University of California, Irvine. Follow me on bluesky: @norabradford"]
   # Contact page
      # Since this template is static, the contact form uses www.formspree.io as a
      # proxy. The form makes a POST request to their servers to send the actual
