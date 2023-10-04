@@ -2,9 +2,12 @@
 title = "About me"
 +++
 
-I'm a third-year cognitive science (with a concentration in cognitive neuroscience) PhD student at UC Irvine where I study metacognition and learning with Dr. Megan Peters. 
+I'm a fourth-year cognitive science (with a concentration in cognitive neuroscience) PhD student at UC Irvine where I study metacognition and learning with Dr. Megan Peters. 
 
-Check out my UPenn LPS profile [here](https://www.lps.upenn.edu/non-degree-programs/postbacc-studies/stories/nora-ashley-bradford) and an alumni update post from the UChicago Neuro club [here](https://neuroclubuchicago.squarespace.com/blog/alumni-updates-nora-bradford-a95dp-m9r3c)
+Check out:
+- A UPenn LPS profile about me [here](https://www.lps.upenn.edu/non-degree-programs/postbacc-studies/stories/nora-ashley-bradford) 
+- An alumni update post from the UChicago Neuro club [here](https://neuroclubuchicago.squarespace.com/blog/alumni-updates-nora-bradford-a95dp-m9r3c)
+- And a piece about an awesome science journalism workshop I attended (with a quote from me) [here](https://www.ias.edu/news/why-write-story-ias-science-journalism-workshop-2023)
 
 <img src="/img/about.jpg " alt="This is me" width = 400 style=float:right/>
 
