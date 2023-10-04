@@ -4,9 +4,9 @@ title = "Clickbait, consciousness science, and responsible journalism"
 draft = false
 image = "img/portfolio/actInfInst.png"
 showonlyimage = false
-weight = 1
+weight = 2
 +++
-ActInf GuestStream 049.1 
+Was a guest on ActInf GuestStream 049.1 
 <!--more-->
 
 If you are not redirected automatically, follow <a href='https://www.youtube.com/watch?v=dUXfgzKHV1c'> this link</a>.

@@ -8,30 +8,12 @@
     <language>en-us</language>
     <lastBuildDate>Wed, 26 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://norabradford.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Clickbait, consciousness science, and responsible journalism</title>
-      <link>https://norabradford.github.io/portfolio/activeinference/</link>
-      <pubDate>Wed, 26 Jul 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://norabradford.github.io/portfolio/activeinference/</guid>
-      <description>&lt;p&gt;ActInf GuestStream 049.1&lt;/p&gt;</description>
-    </item>
-    
-    <item>
       <title>Humans Can Spot Tiny Numerical Differences</title>
       <link>https://norabradford.github.io/portfolio/numbers/</link>
       <pubDate>Sat, 01 Jul 2023 00:00:00 +0000</pubDate>
       
       <guid>https://norabradford.github.io/portfolio/numbers/</guid>
       <description>&lt;p&gt;Scientific American&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>The classic map of how the human brain manages movement gets an update</title>
-      <link>https://norabradford.github.io/portfolio/homunculus/</link>
-      <pubDate>Thu, 20 Apr 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://norabradford.github.io/portfolio/homunculus/</guid>
-      <description>&lt;p&gt;Science News&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -44,12 +26,12 @@
     </item>
     
     <item>
-      <title>Stimulating spleens with ultrasound hints at a treatment for inflammation</title>
-      <link>https://norabradford.github.io/portfolio/ultrasound/</link>
-      <pubDate>Wed, 17 May 2023 00:00:00 +0000</pubDate>
+      <title>Clickbait, consciousness science, and responsible journalism</title>
+      <link>https://norabradford.github.io/portfolio/activeinference/</link>
+      <pubDate>Wed, 26 Jul 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://norabradford.github.io/portfolio/ultrasound/</guid>
-      <description>&lt;p&gt;Science News&lt;/p&gt;</description>
+      <guid>https://norabradford.github.io/portfolio/activeinference/</guid>
+      <description>&lt;p&gt;Was a guest on ActInf GuestStream 049.1&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -59,6 +41,15 @@
       
       <guid>https://norabradford.github.io/portfolio/osteoporosis/</guid>
       <description>&lt;p&gt;Drug Discovery News&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>The classic map of how the human brain manages movement gets an update</title>
+      <link>https://norabradford.github.io/portfolio/homunculus/</link>
+      <pubDate>Thu, 20 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://norabradford.github.io/portfolio/homunculus/</guid>
+      <description>&lt;p&gt;Science News&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -125,21 +116,21 @@
     </item>
     
     <item>
+      <title>Stimulating spleens with ultrasound hints at a treatment for inflammation</title>
+      <link>https://norabradford.github.io/portfolio/ultrasound/</link>
+      <pubDate>Wed, 17 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://norabradford.github.io/portfolio/ultrasound/</guid>
+      <description>&lt;p&gt;Science News&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>After Spinal Cord Injury, Kinesthetic Sense Helps Restore Movement, Model Suggests</title>
       <link>https://norabradford.github.io/portfolio/lamprey/</link>
       <pubDate>Fri, 31 Mar 2023 00:00:00 +0000</pubDate>
       
       <guid>https://norabradford.github.io/portfolio/lamprey/</guid>
       <description>&lt;p&gt;Marine Biological Laboratory&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Epigenome edits unmute MECP2 in Rett-like neurons</title>
-      <link>https://norabradford.github.io/portfolio/mecp2/</link>
-      <pubDate>Thu, 16 Feb 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://norabradford.github.io/portfolio/mecp2/</guid>
-      <description>&lt;p&gt;Spectrum&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -158,6 +149,15 @@
       
       <guid>https://norabradford.github.io/portfolio/neurodev/</guid>
       <description>&lt;p&gt;Marine Biological Laboratory&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Epigenome edits unmute MECP2 in Rett-like neurons</title>
+      <link>https://norabradford.github.io/portfolio/mecp2/</link>
+      <pubDate>Thu, 16 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://norabradford.github.io/portfolio/mecp2/</guid>
+      <description>&lt;p&gt;Spectrum&lt;/p&gt;</description>
     </item>
     
     <item>

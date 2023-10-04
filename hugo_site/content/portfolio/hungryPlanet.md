@@ -1,5 +1,5 @@
 +++
-date = "2023-10-3"
+date = "2023-10-2"
 title = "Hungry Planet"
 draft = false
 image = "img/portfolio/HungryPlanet.png"
