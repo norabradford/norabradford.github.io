@@ -6,7 +6,7 @@ image = "img/portfolio/chemobrain.png"
 showonlyimage = false
 weight = 1
 +++
-Spectrum
+Columbia University Medical Center
 <!--more-->
 
 If you are not redirected automatically, follow <a href='https://www.cuimc.columbia.edu/news/potential-therapy-chemobrain'> this link</a>.
