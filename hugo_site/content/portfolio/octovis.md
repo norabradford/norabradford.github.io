@@ -2,7 +2,7 @@
 date = "2023-12-22"
 title = "Octopuses Are Colorblind. Here’s How They See the World"
 draft = false
-image = "img/portfolio/octovis.mp4"
+image = "img/portfolio/octovis.gif"
 showonlyimage = false
 weight = 1
 +++
