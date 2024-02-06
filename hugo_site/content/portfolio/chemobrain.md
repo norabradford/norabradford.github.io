@@ -4,7 +4,7 @@ title = "A Potential Therapy for “Chemobrain”"
 draft = false
 image = "img/portfolio/chemobrain.png"
 showonlyimage = false
-weight = 2
+weight = 3
 +++
 Columbia University Medical Center
 <!--more-->

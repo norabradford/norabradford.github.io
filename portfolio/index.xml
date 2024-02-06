@@ -8,24 +8,6 @@
     <language>en-us</language>
     <lastBuildDate>Fri, 22 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://norabradford.github.io/portfolio/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Octopuses Are Colorblind. Here’s How They See the World</title>
-      <link>https://norabradford.github.io/portfolio/octovis/</link>
-      <pubDate>Fri, 22 Dec 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://norabradford.github.io/portfolio/octovis/</guid>
-      <description>&lt;p&gt;Scientific American&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Young corn leaves can ‘smell’ danger</title>
-      <link>https://norabradford.github.io/portfolio/corn/</link>
-      <pubDate>Mon, 27 Nov 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://norabradford.github.io/portfolio/corn/</guid>
-      <description>&lt;p&gt;Science News Explores&lt;/p&gt;</description>
-    </item>
-    
-    <item>
       <title>Humans Can Spot Tiny Numerical Differences</title>
       <link>https://norabradford.github.io/portfolio/numbers/</link>
       <pubDate>Sat, 01 Jul 2023 00:00:00 +0000</pubDate>
@@ -53,21 +35,21 @@
     </item>
     
     <item>
-      <title>A Potential Therapy for “Chemobrain”</title>
-      <link>https://norabradford.github.io/portfolio/chemobrain/</link>
-      <pubDate>Thu, 19 Oct 2023 00:00:00 +0000</pubDate>
+      <title>Octopuses Are Colorblind. Here’s How They See the World</title>
+      <link>https://norabradford.github.io/portfolio/octovis/</link>
+      <pubDate>Fri, 22 Dec 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://norabradford.github.io/portfolio/chemobrain/</guid>
-      <description>&lt;p&gt;Columbia University Medical Center&lt;/p&gt;</description>
+      <guid>https://norabradford.github.io/portfolio/octovis/</guid>
+      <description>&lt;p&gt;Scientific American&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>Clickbait, consciousness science, and responsible journalism</title>
-      <link>https://norabradford.github.io/portfolio/activeinference/</link>
-      <pubDate>Wed, 26 Jul 2023 00:00:00 +0000</pubDate>
+      <title>Young corn leaves can ‘smell’ danger</title>
+      <link>https://norabradford.github.io/portfolio/corn/</link>
+      <pubDate>Mon, 27 Nov 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://norabradford.github.io/portfolio/activeinference/</guid>
-      <description>&lt;p&gt;Was a guest on ActInf GuestStream 049.1&lt;/p&gt;</description>
+      <guid>https://norabradford.github.io/portfolio/corn/</guid>
+      <description>&lt;p&gt;Science News Explores&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -77,15 +59,6 @@
       
       <guid>https://norabradford.github.io/portfolio/osteoporosis/</guid>
       <description>&lt;p&gt;Drug Discovery News&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>The classic map of how the human brain manages movement gets an update</title>
-      <link>https://norabradford.github.io/portfolio/homunculus/</link>
-      <pubDate>Thu, 20 Apr 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://norabradford.github.io/portfolio/homunculus/</guid>
-      <description>&lt;p&gt;Science News&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -152,11 +125,20 @@
     </item>
     
     <item>
-      <title>Stimulating spleens with ultrasound hints at a treatment for inflammation</title>
-      <link>https://norabradford.github.io/portfolio/ultrasound/</link>
-      <pubDate>Wed, 17 May 2023 00:00:00 +0000</pubDate>
+      <title>A Potential Therapy for “Chemobrain”</title>
+      <link>https://norabradford.github.io/portfolio/chemobrain/</link>
+      <pubDate>Thu, 19 Oct 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://norabradford.github.io/portfolio/ultrasound/</guid>
+      <guid>https://norabradford.github.io/portfolio/chemobrain/</guid>
+      <description>&lt;p&gt;Columbia University Medical Center&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>The classic map of how the human brain manages movement gets an update</title>
+      <link>https://norabradford.github.io/portfolio/homunculus/</link>
+      <pubDate>Thu, 20 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://norabradford.github.io/portfolio/homunculus/</guid>
       <description>&lt;p&gt;Science News&lt;/p&gt;</description>
     </item>
     
@@ -185,6 +167,24 @@
       
       <guid>https://norabradford.github.io/portfolio/neurodev/</guid>
       <description>&lt;p&gt;Marine Biological Laboratory&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Clickbait, consciousness science, and responsible journalism</title>
+      <link>https://norabradford.github.io/portfolio/activeinference/</link>
+      <pubDate>Wed, 26 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://norabradford.github.io/portfolio/activeinference/</guid>
+      <description>&lt;p&gt;Was a guest on ActInf GuestStream 049.1&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Stimulating spleens with ultrasound hints at a treatment for inflammation</title>
+      <link>https://norabradford.github.io/portfolio/ultrasound/</link>
+      <pubDate>Wed, 17 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://norabradford.github.io/portfolio/ultrasound/</guid>
+      <description>&lt;p&gt;Science News&lt;/p&gt;</description>
     </item>
     
     <item>

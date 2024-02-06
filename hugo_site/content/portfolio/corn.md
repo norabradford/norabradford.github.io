@@ -4,7 +4,7 @@ title = "Young corn leaves can ‘smell’ danger"
 draft = false
 image = "img/portfolio/cornsmell.jpg"
 showonlyimage = false
-weight = 1
+weight = 2
 +++
 Science News Explores
 <!--more-->

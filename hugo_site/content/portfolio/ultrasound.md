@@ -4,7 +4,7 @@ title = "Stimulating spleens with ultrasound hints at a treatment for inflammati
 draft = false
 image = "img/portfolio/ultrasounds.jpg"
 showonlyimage = false
-weight = 3
+weight = 4
 +++
 Science News
 <!--more-->
