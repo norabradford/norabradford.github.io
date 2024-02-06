@@ -2,11 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://norabradford.github.io/portfolio/numbers/</loc>
-    <lastmod>2023-07-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://norabradford.github.io/portfolio/hungryplanet/</loc>
-  </url><url>
     <loc>https://norabradford.github.io/portfolio/dmn/</loc>
   </url><url>
     <loc>https://norabradford.github.io/portfolio/octovis/</loc>
@@ -14,6 +9,9 @@
   </url><url>
     <loc>https://norabradford.github.io/portfolio/corn/</loc>
     <lastmod>2023-11-27T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://norabradford.github.io/portfolio/numbers/</loc>
+    <lastmod>2023-07-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://norabradford.github.io/portfolio/osteoporosis/</loc>
     <lastmod>2023-04-28T00:00:00+00:00</lastmod>
@@ -38,6 +36,8 @@
   </url><url>
     <loc>https://norabradford.github.io/portfolio/16p/</loc>
     <lastmod>2022-12-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://norabradford.github.io/portfolio/hungryplanet/</loc>
   </url><url>
     <loc>https://norabradford.github.io/portfolio/chemobrain/</loc>
     <lastmod>2023-10-19T00:00:00+00:00</lastmod>
