@@ -4,7 +4,7 @@ title = "What Your Brain Is Doing When You’re Not Doing Anything"
 draft = false
 image = "img/portfolio/dmn.jpg"
 showonlyimage = false
-weight = 1
+weight = 2
 +++
 Quanta Magazine
 <!--more-->

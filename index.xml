@@ -26,21 +26,30 @@
     </item>
     
     <item>
+      <title>A brain network linked to attention is larger in people with depression</title>
+      <link>https://norabradford.github.io/portfolio/depressionbrain/</link>
+      <pubDate>Mon, 25 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://norabradford.github.io/portfolio/depressionbrain/</guid>
+      <description>&lt;p&gt;Science News&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Pregnancy transforms the brain—and some changes last forever</title>
+      <link>https://norabradford.github.io/portfolio/pregbrain/</link>
+      <pubDate>Wed, 20 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://norabradford.github.io/portfolio/pregbrain/</guid>
+      <description>&lt;p&gt;National Geographic&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>These windpipe cells trigger coughs to keep water out of the lungs</title>
       <link>https://norabradford.github.io/portfolio/windpipe/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://norabradford.github.io/portfolio/windpipe/</guid>
       <description>&lt;p&gt;Science News&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>What Your Brain Is Doing When You’re Not Doing Anything</title>
-      <link>https://norabradford.github.io/portfolio/dmn/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://norabradford.github.io/portfolio/dmn/</guid>
-      <description>&lt;p&gt;Quanta Magazine&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -53,30 +62,12 @@
     </item>
     
     <item>
-      <title>Octopuses Are Colorblind. Here’s How They See the World</title>
-      <link>https://norabradford.github.io/portfolio/octovis/</link>
-      <pubDate>Fri, 22 Dec 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://norabradford.github.io/portfolio/octovis/</guid>
-      <description>&lt;p&gt;Scientific American&lt;/p&gt;</description>
-    </item>
-    
-    <item>
       <title>Young corn leaves can ‘smell’ danger</title>
       <link>https://norabradford.github.io/portfolio/corn/</link>
       <pubDate>Mon, 27 Nov 2023 00:00:00 +0000</pubDate>
       
       <guid>https://norabradford.github.io/portfolio/corn/</guid>
       <description>&lt;p&gt;Science News Explores&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Humans Can Spot Tiny Numerical Differences</title>
-      <link>https://norabradford.github.io/portfolio/numbers/</link>
-      <pubDate>Sat, 01 Jul 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://norabradford.github.io/portfolio/numbers/</guid>
-      <description>&lt;p&gt;Scientific American&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -152,12 +143,21 @@
     </item>
     
     <item>
-      <title>Hungry Planet</title>
-      <link>https://norabradford.github.io/portfolio/hungryplanet/</link>
+      <title>What Your Brain Is Doing When You’re Not Doing Anything</title>
+      <link>https://norabradford.github.io/portfolio/dmn/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://norabradford.github.io/portfolio/hungryplanet/</guid>
-      <description>&lt;p&gt;PBS Terra (I&amp;rsquo;m the assistant writer)&lt;/p&gt;</description>
+      <guid>https://norabradford.github.io/portfolio/dmn/</guid>
+      <description>&lt;p&gt;Quanta Magazine&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Octopuses Are Colorblind. Here’s How They See the World</title>
+      <link>https://norabradford.github.io/portfolio/octovis/</link>
+      <pubDate>Fri, 22 Dec 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://norabradford.github.io/portfolio/octovis/</guid>
+      <description>&lt;p&gt;Scientific American&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -167,6 +167,15 @@
       
       <guid>https://norabradford.github.io/portfolio/chemobrain/</guid>
       <description>&lt;p&gt;Columbia University Medical Center&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Humans Can Spot Tiny Numerical Differences</title>
+      <link>https://norabradford.github.io/portfolio/numbers/</link>
+      <pubDate>Sat, 01 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://norabradford.github.io/portfolio/numbers/</guid>
+      <description>&lt;p&gt;Scientific American&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -203,6 +212,24 @@
       
       <guid>https://norabradford.github.io/portfolio/neurodev/</guid>
       <description>&lt;p&gt;Marine Biological Laboratory&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Hungry Planet</title>
+      <link>https://norabradford.github.io/portfolio/hungryplanet/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://norabradford.github.io/portfolio/hungryplanet/</guid>
+      <description>&lt;p&gt;PBS Terra (I&amp;rsquo;m the assistant writer)&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Two Neuroscience Laws Governing How We Sense the World Finally United After 67 Years</title>
+      <link>https://norabradford.github.io/portfolio/simons/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://norabradford.github.io/portfolio/simons/</guid>
+      <description>&lt;p&gt;Simons Institute&lt;/p&gt;</description>
     </item>
     
     <item>

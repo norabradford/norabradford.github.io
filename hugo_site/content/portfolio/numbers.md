@@ -4,7 +4,7 @@ title = "Humans Can Spot Tiny Numerical Differences"
 draft = false
 image = "img/portfolio/numbers.png"
 showonlyimage = false
-weight = 2
+weight = 3
 +++
 Scientific American
 <!--more-->

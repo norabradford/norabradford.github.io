@@ -4,7 +4,7 @@ title = "Hungry Planet"
 draft = false
 image = "img/portfolio/HungryPlanet.png"
 showonlyimage = false
-weight = 2
+weight = 3
 +++
 PBS Terra (I'm the assistant writer)
 <!--more-->

@@ -1,0 +1,7 @@
+@article{owid-mental-health,
+    author = {Saloni Dattani and Lucas Rodés-Guirao and Hannah Ritchie and Max Roser},
+    title = {Mental Health},
+    journal = {Our World in Data},
+    year = {2023},
+    note = {https://ourworldindata.org/mental-health}
+}
