@@ -4,7 +4,7 @@ title = "Gene therapy for pain treatment"
 draft = false
 image = "img/portfolio/chronic.png"
 showonlyimage = false
-weight = 2
+weight = 3
 +++
 Drug Discovery News
 <!--more-->

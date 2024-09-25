@@ -4,7 +4,7 @@ title = "Soft Robots Take Steps toward Independence"
 draft = false
 image = "img/portfolio/softRobots.jpg"
 showonlyimage = false
-weight = 2
+weight = 3
 +++
 Scientific American
 <!--more-->

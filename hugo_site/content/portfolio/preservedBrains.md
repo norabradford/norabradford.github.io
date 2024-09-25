@@ -4,7 +4,7 @@ title = "Human brains found at archaeological sites are surprisingly well-preser
 draft = false
 image = "img/portfolio/preserved.png"
 showonlyimage = false
-weight = 1
+weight = 2
 +++
 Science News
 <!--more-->

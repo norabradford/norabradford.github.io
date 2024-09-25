@@ -4,7 +4,7 @@ title = "The classic map of how the human brain manages movement gets an update"
 draft = false
 image = "img/portfolio/homunculus.jpg"
 showonlyimage = false
-weight = 3
+weight = 4
 +++
 Science News
 <!--more-->

@@ -4,7 +4,7 @@ title = "Finding nonantibiotic solutions to resistant UTI"
 draft = false
 image = "img/portfolio/uti.png"
 showonlyimage = false
-weight = 1
+weight = 2
 +++
 Drug Discovery News
 <!--more-->

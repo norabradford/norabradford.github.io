@@ -4,7 +4,7 @@ title = "Opening the Black Box of Late Neurodevelopment"
 draft = false
 image = "img/portfolio/neurodev.gif"
 showonlyimage = false
-weight = 3
+weight = 5
 +++
 Marine Biological Laboratory
 <!--more-->

@@ -1,10 +1,10 @@
 +++
-date = "2024-6-17"
+date = "2024-06-17"
 title = "Two Neuroscience Laws Governing How We Sense the World Finally United After 67 Years"
 draft = false
 image = "img/portfolio/simons.png"
 showonlyimage = false
-weight = 3
+weight = 2
 +++
 Simons Institute
 <!--more-->

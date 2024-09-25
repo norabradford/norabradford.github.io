@@ -4,7 +4,7 @@ title = "How Octopus Arms Bypass the Brain"
 draft = false
 image = "img/portfolio/octoAnat.jpg"
 showonlyimage = false
-weight = 2
+weight = 3
 +++
 Scientific American
 <!--more-->

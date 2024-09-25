@@ -4,7 +4,7 @@ title = "Novel brain research could feed misplaced sci-fi worries for the public
 draft = false
 image = "img/portfolio/neuralOrganoids.jpg"
 showonlyimage = false
-weight = 5
+weight = 6
 +++
 CASW Student Newsroom
 <!--more-->

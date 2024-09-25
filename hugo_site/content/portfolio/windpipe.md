@@ -4,7 +4,7 @@ title = "These windpipe cells trigger coughs to keep water out of the lungs"
 draft = false
 image = "img/portfolio/windpipe.png"
 showonlyimage = false
-weight = 1
+weight = 2
 +++
 Science News
 <!--more-->

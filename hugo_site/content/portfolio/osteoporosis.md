@@ -4,7 +4,7 @@ title = "One small molecule may transform osteoporosis treatment"
 draft = false
 image = "img/portfolio/osteoporosis.jpg"
 showonlyimage = false
-weight = 2
+weight = 5
 +++
 Drug Discovery News
 <!--more-->
