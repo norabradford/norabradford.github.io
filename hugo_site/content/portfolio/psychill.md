@@ -4,7 +4,7 @@ title = "Common Brain Network for Psychiatric Illness Discovered"
 draft = false
 image = "img/portfolio/psychill.jpg"
 showonlyimage = false
-weight = 2
+weight = 5
 +++
 Brigham and Women's Hospital
 <!--more-->
