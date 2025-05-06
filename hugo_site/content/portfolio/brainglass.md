@@ -4,7 +4,7 @@ title = "Did Mount Vesuvius’ ash cloud really transform a brain into glass?"
 draft = false
 image = "img/portfolio/brainglass.jpg"
 showonlyimage = false
-weight = 1
+weight = 2
 +++
 National Geographic
 <!--more-->

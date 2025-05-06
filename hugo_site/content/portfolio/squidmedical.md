@@ -4,7 +4,7 @@ title = "A squid-inspired medical device could reduce the need for needles"
 draft = false
 image = "img/portfolio/squidmedical.png"
 showonlyimage = false
-weight = 1
+weight = 2
 +++
 Science News
 <!--more-->

@@ -4,7 +4,7 @@ title = "Your brain can perceive subtle odor changes in a single sniff"
 draft = false
 image = "img/portfolio/nose.jpg"
 showonlyimage = false
-weight = 1
+weight = 2
 +++
 Science News
 <!--more-->

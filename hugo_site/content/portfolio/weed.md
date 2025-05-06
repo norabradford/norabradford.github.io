@@ -4,7 +4,7 @@ title = "Minor cannabinoid shows promise in reducing anxiety"
 draft = false
 image = "img/portfolio/weed.jpg"
 showonlyimage = false
-weight = 1
+weight = 2
 +++
 Drug Discovery News
 <!--more-->
