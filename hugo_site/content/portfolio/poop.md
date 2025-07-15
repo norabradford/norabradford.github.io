@@ -4,7 +4,7 @@ title = "Skip the dietary questionnaire, use stool to track what you eat"
 draft = false
 image = "img/portfolio/poop.jpg"
 showonlyimage = false
-weight = 1
+weight = 2
 +++
 Drug Discovery News
 <!--more-->

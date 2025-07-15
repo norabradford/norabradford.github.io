@@ -2,11 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://norabradford.github.io/portfolio/happiness/</loc>
-    <lastmod>2025-05-02T00:00:00+00:00</lastmod>
+    <loc>https://norabradford.github.io/portfolio/magma/</loc>
+    <lastmod>2025-07-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://norabradford.github.io/portfolio/poop/</loc>
-    <lastmod>2025-04-02T00:00:00+00:00</lastmod>
+    <loc>https://norabradford.github.io/portfolio/pfas/</loc>
+    <lastmod>2025-07-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://norabradford.github.io/portfolio/neurogenesis/</loc>
+    <lastmod>2025-07-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://norabradford.github.io/portfolio/boat/</loc>
+    <lastmod>2025-06-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://norabradford.github.io/portfolio/mindwander/</loc>
+    <lastmod>2025-06-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://norabradford.github.io/portfolio/mitobrain/</loc>
     <lastmod>2025-03-26T00:00:00+00:00</lastmod>
@@ -17,14 +26,17 @@
     <loc>https://norabradford.github.io/portfolio/mos/</loc>
     <lastmod>2025-02-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://norabradford.github.io/portfolio/octovis/</loc>
-    <lastmod>2023-12-22T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://norabradford.github.io/portfolio/depressionbrain/</loc>
     <lastmod>2023-09-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://norabradford.github.io/portfolio/pregbrain/</loc>
     <lastmod>2023-09-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://norabradford.github.io/portfolio/happiness/</loc>
+    <lastmod>2025-05-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://norabradford.github.io/portfolio/poop/</loc>
+    <lastmod>2025-04-02T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://norabradford.github.io/portfolio/brainglass/</loc>
     <lastmod>2025-03-07T00:00:00+00:00</lastmod>
@@ -52,6 +64,9 @@
   </url><url>
     <loc>https://norabradford.github.io/portfolio/preservedbrains/</loc>
     <lastmod>2024-03-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://norabradford.github.io/portfolio/octovis/</loc>
+    <lastmod>2023-12-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://norabradford.github.io/portfolio/windpipe/</loc>
   </url><url>
@@ -182,10 +197,10 @@
     <loc>https://norabradford.github.io/portfolio/lohdown/</loc>
   </url><url>
     <loc>https://norabradford.github.io/</loc>
-    <lastmod>2025-05-02T00:00:00+00:00</lastmod>
+    <lastmod>2025-07-07T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://norabradford.github.io/portfolio/</loc>
-    <lastmod>2025-05-02T00:00:00+00:00</lastmod>
+    <lastmod>2025-07-07T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://norabradford.github.io/contact/</loc>
     <lastmod>2016-11-06T13:00:25+05:30</lastmod>

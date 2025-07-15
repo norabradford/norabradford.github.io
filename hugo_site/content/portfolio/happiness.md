@@ -4,7 +4,7 @@ title = "The problem with 'happiness'"
 draft = false
 image = "img/portfolio/happiness.jpg"
 showonlyimage = false
-weight = 1
+weight = 2
 +++
 National Geographic
 <!--more-->

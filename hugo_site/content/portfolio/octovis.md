@@ -4,7 +4,7 @@ title = "Octopuses Are Colorblind. Here’s How They See the World"
 draft = false
 image = "img/portfolio/octovis.gif"
 showonlyimage = false
-weight = 1
+weight = 2
 +++
 Scientific American
 <!--more-->
