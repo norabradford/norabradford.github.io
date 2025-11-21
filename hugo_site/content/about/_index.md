@@ -2,7 +2,7 @@
 title = "About me"
 +++
 
-I'm a fifth-year cognitive science (with a concentration in cognitive neuroscience) PhD student at UC Irvine where I study metacognition and learning with Dr. Megan Peters. 
+I'm a lecturer in the Critical Writing program at University of Pennsylvania where I teach writing courses centered on scientific topics. I earned my Ph.D. in Cognitive Science (with a concentration in cognitive neuroscience) from UC Irvine in 2025. I specifically studied metacognition and learning under the supervision of Dr. Megan Peters. 
 
 Check out:
 - A UPenn LPS profile about me [here](https://www.lps.upenn.edu/non-degree-programs/postbacc-studies/stories/nora-ashley-bradford) 
