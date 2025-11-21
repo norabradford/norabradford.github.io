@@ -1,6 +1,6 @@
 publishdir = '../'
 baseURL = 'https://norabradford.github.io'
-title = 'Nora Bradford'
+title = 'Nora Bradford, Ph.D.'
 theme = "hugo-creative-portfolio-theme"
 languageCode = 'en-us'
 # Enable comments by entering your Disqus shortname
@@ -16,9 +16,9 @@ googleAnalytics = ""
   # Use custom.css for your custom styling
   style = "default"
   description = "Personal website for Nora Bradford"
-  copyright = "&copy;2022 Nora Bradford"
+  copyright = "&copy;2022 Nora Bradford, Ph.D."
   sidebarAbout = [
-    "Science writer and cognitive science PhD student at the University of California, Irvine. Follow me on bluesky: <a href='https://bsky.app/profile/norabradford.bsky.social'>@norabradford</a>"]
+    "Science writer and lecturer at UPenn. Follow me on bluesky: <a href='https://bsky.app/profile/norabradford.bsky.social'>@norabradford</a>"]
   # Contact page
      # Since this template is static, the contact form uses www.formspree.io as a
      # proxy. The form makes a POST request to their servers to send the actual
