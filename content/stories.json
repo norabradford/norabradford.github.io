@@ -1,0 +1,648 @@
+[
+  {
+    "title": "Researchers identify new target for treatment of aggressive childhood brain tumors",
+    "url": "https://www.broadinstitute.org/news/researchers-identify-new-target-treatment-aggressive-childhood-brain-tumors",
+    "publication": "Broad Institute of MIT and Harvard",
+    "description": "An international team clarifies the role of the mutated PPM1D gene in diffuse midline gliomas and lays groundwork for future treatments.",
+    "image": "img/portfolio/DMG.jpeg",
+    "date": "2022-02-03"
+  },
+  {
+    "title": "Hungry Planet",
+    "url": "https://www.pbs.org/show/hungry-planet/",
+    "publication": "PBS Terra (I'm the assistant writer)",
+    "description": "",
+    "image": "img/portfolio/HungryPlanet.png",
+    "date": "2023-10-02"
+  },
+  {
+    "title": "Scientists Used Prehistoric Tools to Build a Canoe, Then Paddled Across 140 Miles from Taiwan to Japan",
+    "url": "https://www.scientificamerican.com/article/archaeologists-recreate-prehistoric-tools-to-build-a-canoe-for-140-mile/",
+    "publication": "Scientific American",
+    "description": "",
+    "image": "img/portfolio/boat.jpg",
+    "date": "2025-06-25"
+  },
+  {
+    "title": "Time flies when you’re in lockdown",
+    "url": "https://www.nasw.org/article/time-flies-when-youre-lockdown",
+    "publication": "National Association of Science Writers Student Newsroom",
+    "description": "",
+    "image": "img/portfolio/TimeStory.png",
+    "date": "2021-10-19"
+  },
+  {
+    "title": "Minor cannabinoid shows promise in reducing anxiety",
+    "url": "https://www.drugdiscoverynews.com/minor-cannabinoid-shows-promise-in-reducing-anxiety-16096",
+    "publication": "Drug Discovery News",
+    "description": "Cannabigerol relieved anxiety and stress without the psychoactive effects of THC in a small clinical trial.",
+    "image": "img/portfolio/weed.jpg",
+    "date": "2024-10-17"
+  },
+  {
+    "title": "Repeated UTIs may stem from a disrupted microbiome",
+    "url": "https://www.broadinstitute.org/news/repeated-urinary-tract-infections-may-stem-disrupted-microbiome",
+    "publication": "Broad Institute of MIT and Harvard",
+    "description": "Broad researchers discover that changes in immune responses and the gut microbial community could underlie repeated occurrences of these common infections.",
+    "image": "img/portfolio/UTI.jpg",
+    "date": "2022-05-02"
+  },
+  {
+    "title": "What a Wandering Mind Learns",
+    "url": "https://www.scientificamerican.com/article/when-letting-your-mind-wander-helps-you-learn/",
+    "publication": "Scientific American\n(art by Ben Shahn)",
+    "description": "",
+    "image": "img/portfolio/benshahn.jpg",
+    "date": "2025-06-10"
+  },
+  {
+    "title": "A brain network linked to attention is larger in people with depression",
+    "url": "https://www.sciencenews.org/article/brain-network-larger-depression",
+    "publication": "Science News",
+    "description": "The difference is visible even in those who haven’t yet developed depression symptoms",
+    "image": "img/portfolio/depressionbrain.png",
+    "date": "2023-09-25"
+  },
+  {
+    "title": "Octopuses Are Colorblind. Here’s How They See the World",
+    "url": "https://www.scientificamerican.com/article/octopuses-are-colorblind-heres-how-they-see-the-world/",
+    "publication": "Scientific American",
+    "description": "Cephalopods have developed unique visual systems to deal with their underwater world",
+    "image": "img/portfolio/octovis.gif",
+    "date": "2023-12-22"
+  },
+  {
+    "title": "Probiotics to alleviate depression",
+    "url": "https://www.drugdiscoverynews.com/probiotics-to-alleviate-depression-15989",
+    "publication": "Drug Discovery News",
+    "description": "",
+    "image": "img/portfolio/probioticsDepression.png",
+    "date": "2024-04-18"
+  },
+  {
+    "title": "Research on Psychedelics and How Mushrooms Can Help Combat Depression",
+    "url": "https://www.discovermagazine.com/mind/psychedelic-research-on-how-mushrooms-can-help-combat-depression",
+    "publication": "Discover",
+    "description": "Psilocybin, the psychoactive compound found in mushrooms, can help depression and increase cognitive flexibility, but scientists say more research is still needed.",
+    "image": "img/portfolio/shroom.jpg",
+    "date": "2023-02-02"
+  },
+  {
+    "title": "Novel brain research could feed misplaced sci-fi worries for the public",
+    "url": "https://casw.org/news/novel-brain-research-could-feed-misplaced-sci-fi-worries-for-the-public/",
+    "publication": "CASW Student Newsroom",
+    "description": "Organoids and chimeras do pose ethical concerns, but experts say wild-eyed popular commentaries are off-base.",
+    "image": "img/portfolio/neuralOrganoids.jpg",
+    "date": "2021-10-19"
+  },
+  {
+    "title": "The Potato’s Mysterious Family Tree Revealed—And It Includes Tomatoes",
+    "url": "https://www.scientificamerican.com/article/how-the-potato-got-its-start-nine-million-years-ago-thanks-to-a-tomato/",
+    "publication": "Scientific American",
+    "description": "",
+    "image": "img/portfolio/tomatoes.jpg",
+    "date": "2025-07-31"
+  },
+  {
+    "title": "Finding research inspiration in life experience",
+    "url": "https://www.socsci.uci.edu/newsevents/news/2021/2021-11-22-zeinab-kachakeche.php",
+    "publication": "UCI Social Sciences News",
+    "description": "",
+    "image": "img/portfolio/ZeinabKachakeche.jpg",
+    "date": "2021-11-22"
+  },
+  {
+    "title": "Episode 127: Nic Koziolek discusses self-knowledge",
+    "url": "https://elucidations.vercel.app/posts/episode-127/",
+    "publication": "Elucidations Podcast",
+    "description": "",
+    "image": "img/portfolio/elucidations.jpg",
+    "date": "2020-07-13"
+  },
+  {
+    "title": "TikTok Scripts for the Museum of Science - Boston ",
+    "url": "https://www.instagram.com/reel/DAZNyN5sjrD/",
+    "publication": "I pitch and write scripts for some of Alex Dainis's TikToks for the Museum of Science, Boston",
+    "description": "",
+    "image": "img/portfolio/MOS_Logo.jpg",
+    "date": "2025-02-11",
+    "links": [
+      {
+        "label": "Reel 1",
+        "url": "https://www.instagram.com/reel/DAZNyN5sjrD/"
+      },
+      {
+        "label": "Reel 2",
+        "url": "https://www.instagram.com/reel/DAysDt6pCzd/"
+      },
+      {
+        "label": "Reel 3",
+        "url": "https://www.instagram.com/reel/DCXeXCwB_Pq/"
+      },
+      {
+        "label": "Reel 4",
+        "url": "https://www.instagram.com/reel/DCmqghbIpu0/"
+      },
+      {
+        "label": "Reel 5",
+        "url": "https://www.instagram.com/reel/DEVDVPaNuqX/"
+      }
+    ]
+  },
+  {
+    "title": "Heatstroke and Extreme Heat can Hurt Health in the Long-Term, Too",
+    "url": "https://www.scientificamerican.com/article/heatstroke-and-extreme-heat-exposure-leads-to-chronic-health-effects-on/",
+    "publication": "Scientific American",
+    "description": "",
+    "image": "img/portfolio/heatstroke.jpg",
+    "date": "2025-07-30"
+  },
+  {
+    "title": "Common Brain Network for Psychiatric Illness Discovered",
+    "url": "https://www.brighamandwomens.org/about-bwh/newsroom/press-releases-detail?id=4330",
+    "publication": "Brigham and Women's Hospital",
+    "description": "A new study by investigators from Brigham and Women’s Hospital investigated four pre-existing, publicly available neurological and psychiatric datasets, and pinpointed a network of brain areas underlying psychiatric illnesses.",
+    "image": "img/portfolio/psychill.jpg",
+    "date": "2023-01-12"
+  },
+  {
+    "title": "Epigenome edits unmute MECP2 in Rett-like neurons",
+    "url": "https://www.spectrumnews.org/news/epigenome-edits-unmute-mecp2-in-rett-like-neurons/",
+    "publication": "Spectrum",
+    "description": "",
+    "image": "img/portfolio/MECP2.png",
+    "date": "2023-02-16"
+  },
+  {
+    "title": "What Can Frogs Tell Us About Childhood Adversity?",
+    "url": "https://www.mbl.edu/news/what-can-frogs-tell-us-about-childhood-adversity-whitman-fellow-sally-seraphin-explores",
+    "publication": "Marine Biological Laboratory",
+    "description": "Sally Seraphin is using red-eyed tree frogs as a model for studying adverse childhood experiences.",
+    "image": "img/portfolio/frog.jpg",
+    "date": "2022-08-05"
+  },
+  {
+    "title": "Soft Robots Take Steps toward Independence",
+    "url": "https://www.scientificamerican.com/article/soft-robots-take-steps-toward-independence/",
+    "publication": "Scientific American",
+    "description": "",
+    "image": "img/portfolio/softRobots.jpg",
+    "date": "2023-02-14"
+  },
+  {
+    "title": "Archaeologists Stumble upon Tomb of Ancient Maya City’s First Ruler",
+    "url": "https://www.scientificamerican.com/article/tomb-of-ancient-maya-citys-first-ruler-has-been-uncovered-by-archaeologists/",
+    "publication": "Scientific American",
+    "description": "",
+    "image": "img/portfolio/maya.jpg",
+    "date": "2025-07-29"
+  },
+  {
+    "title": "Gene therapy for pain treatment",
+    "url": "https://www.drugdiscoverynews.com/gene-therapy-for-pain-treatment-15895",
+    "publication": "Drug Discovery News",
+    "description": "",
+    "image": "img/portfolio/chronic.png",
+    "date": "2024-03-20"
+  },
+  {
+    "title": "How the common cold persisted throughout COVID-19 lockdowns",
+    "url": "https://www.drugdiscoverynews.com/how-the-common-cold-persisted-throughout-covid-19-lockdowns-16124",
+    "publication": "Drug Discovery News",
+    "description": "Rhinoviruses, the main cause of the common cold, are unique among respiratory viruses",
+    "image": "img/portfolio/cold.png",
+    "date": "2024-11-11"
+  },
+  {
+    "title": "First map of human brain mitochondria is ‘groundbreaking’ achievement",
+    "url": "https://www.nature.com/articles/d41586-025-00848-z",
+    "publication": "Nature",
+    "description": "",
+    "image": "img/portfolio/mitobrain.gif",
+    "date": "2025-03-26"
+  },
+  {
+    "title": "These windpipe cells trigger coughs to keep water out of the lungs",
+    "url": "https://www.sciencenews.org/article/trachea-cells-trigger-coughs-water-lungs",
+    "publication": "Science News",
+    "description": "",
+    "image": "img/portfolio/windpipe.png",
+    "date": "2024-04-18"
+  },
+  {
+    "title": "How local surfers can help scientists with ocean restoration",
+    "url": "https://www.ocregister.com/2021/03/28/how-local-surfers-can-help-scientists-with-ocean-restoration/",
+    "publication": "Southern California News Group",
+    "description": "",
+    "image": "img/portfolio/surf.jpg",
+    "date": "2021-03-28"
+  },
+  {
+    "title": "‘Friction-maxxing’ in school: Students should read primary literature, not AI summaries",
+    "url": "https://www.thetransmitter.org/neuro-education/friction-maxxing-in-school-students-should-read-primary-literature-not-ai-summaries/",
+    "publication": "The Transmitter",
+    "description": "",
+    "image": "img/portfolio/oped.png",
+    "date": "2026-03-26"
+  },
+  {
+    "title": "Magma Pulses Are Tearing Africa Apart",
+    "url": "https://www.scientificamerican.com/article/pulsing-magma-in-earths-mantle-drives-tectonic-plates-tearing-africa-apart/",
+    "publication": "Scientific American",
+    "description": "",
+    "image": "img/portfolio/magma.jpg",
+    "date": "2025-07-07"
+  },
+  {
+    "title": "Scientists have now recorded brain waves from freely moving octopuses",
+    "url": "https://www.sciencenews.org/article/scientists-recorded-brain-waves-free-octopus",
+    "publication": "Science News",
+    "description": "",
+    "image": "img/portfolio/octoWaves.jpg",
+    "date": "2023-03-23"
+  },
+  {
+    "title": "Simulations of your gut may predict which probiotics will stick",
+    "url": "https://www.sciencenews.org/article/probiotics-gut-simulations-microbiome",
+    "publication": "Science News",
+    "description": "",
+    "image": "img/portfolio/microbiome.png",
+    "date": "2026-03-02"
+  },
+  {
+    "title": "After Spinal Cord Injury, Kinesthetic Sense Helps Restore Movement, Model Suggests",
+    "url": "https://www.mbl.edu/news/after-spinal-cord-injury-kinesthetic-sense-helps-restore-movement-model-suggests",
+    "publication": "Marine Biological Laboratory",
+    "description": "",
+    "image": "img/portfolio/lamprey.gif",
+    "date": "2023-03-31"
+  },
+  {
+    "title": "Common and rare autism-linked variants share functional effects",
+    "url": "https://www.spectrumnews.org/news/common-and-rare-autism-linked-variants-share-functional-effects/",
+    "publication": "Spectrum News",
+    "description": "Along 16p, the short arm of chromosome 16, a group of common variants and a rare deletion associated with autism seem to have overlapping effects on gene expression, a new study finds.",
+    "image": "img/portfolio/16p.jpg",
+    "date": "2022-12-01"
+  },
+  {
+    "title": "One small molecule may transform osteoporosis treatment",
+    "url": "https://www.drugdiscoverynews.com/one-small-molecule-may-transform-osteoporosis-treatment-15663",
+    "publication": "Drug Discovery News",
+    "description": "",
+    "image": "img/portfolio/osteoporosis.jpg",
+    "date": "2023-04-28"
+  },
+  {
+    "title": "How Your Brain Creates ‘Aha’ Moments and Why They Stick",
+    "url": "https://www.quantamagazine.org/how-your-brain-creates-aha-moments-and-why-they-stick-20251105/",
+    "publication": "Quanta Magazine",
+    "description": "",
+    "image": "img/portfolio/aha.png",
+    "date": "2025-11-05"
+  },
+  {
+    "title": "Proof That Adult Brains Make New Neurons Settles Scientific Controversy",
+    "url": "https://www.scientificamerican.com/article/proof-that-adult-brains-make-new-neurons-settles-scientific-controversy/",
+    "publication": "Scientific American",
+    "description": "",
+    "image": "img/portfolio/neurogenesis.jpg",
+    "date": "2025-07-03"
+  },
+  {
+    "title": "The Loh Down on Science",
+    "url": "https://lohdownonscience.com/author/noraab/",
+    "publication": "Check out my episodes!",
+    "description": "",
+    "image": "img/portfolio/LohDown.jpg",
+    "date": ""
+  },
+  {
+    "title": "Babies brains’ can follow a beat as soon as they’re born",
+    "url": "https://www.sciencenews.org/article/babies-beat-neuroscience-sense-rhythm",
+    "publication": "Science News",
+    "description": "",
+    "image": "img/portfolio/babybrain.png",
+    "date": "2026-02-05"
+  },
+  {
+    "title": "This elephant peels bananas, but only slightly ripe ones",
+    "url": "https://www.sciencenews.org/article/elephant-peels-bananas",
+    "publication": "Science News",
+    "description": "",
+    "image": "img/portfolio/elephant.png",
+    "date": "2023-03-31"
+  },
+  {
+    "title": "The International Space Station lacks microbial diversity. Is it too clean?",
+    "url": "https://www.sciencenews.org/article/international-space-station-microbial",
+    "publication": "Science News",
+    "description": "",
+    "image": "img/portfolio/ISS.jpg",
+    "date": "2025-02-27"
+  },
+  {
+    "title": "Study finds new patterns of antibiotic resistance spread in hospitals",
+    "url": "https://www.broadinstitute.org/news/study-finds-new-patterns-antibiotic-resistance-spread-hospitals",
+    "publication": "Broad Institute of MIT and Harvard",
+    "description": "Using a newly developed method, researchers have discovered more movement of key antibiotic resistance genes within hospitals than previously thought.",
+    "image": "img/portfolio/AntibioticResistance.jpg",
+    "date": "2022-04-19"
+  },
+  {
+    "title": "Lifelong Learners from UChicago’s Graham School Attend MBL Program",
+    "url": "https://www.mbl.edu/news/lifelong-learners-uchicagos-graham-school-attend-mbl-program",
+    "publication": "Marine Biological Laboratory",
+    "description": "",
+    "image": "img/portfolio/Lifelong.jpg",
+    "date": "2022-10-13"
+  },
+  {
+    "title": "Your brain can perceive subtle odor changes in a single sniff",
+    "url": "https://www.sciencenews.org/article/brain-odor-changes-milliseconds",
+    "publication": "Science News",
+    "description": "Odors separated by as little as 60 milliseconds were discernible",
+    "image": "img/portfolio/nose.jpg",
+    "date": "2024-10-14"
+  },
+  {
+    "title": "#WhyIScience: Naeem Nadaf",
+    "url": "https://www.broadinstitute.org/blog/whyiscience-qa-meet-research-associate-passion-perfecting-research-methods",
+    "publication": "Broad Institute of MIT and Harvard",
+    "description": "Meet a research associate with a passion for perfecting research methods.",
+    "image": "img/portfolio/broad.jpg",
+    "date": "2022-05-03"
+  },
+  {
+    "title": "Skip the dietary questionnaire, use stool to track what you eat",
+    "url": "https://www.drugdiscoverynews.com/skip-the-dietary-questionnaire-use-stool-to-track-what-you-eat-16290",
+    "publication": "Drug Discovery News",
+    "description": "",
+    "image": "img/portfolio/poop.jpg",
+    "date": "2025-04-02"
+  },
+  {
+    "title": "Getting your baby to sleep can be a nightmare. Sleep experts know a better way.",
+    "url": "https://www.nationalgeographic.com/science/article/baby-sleep-brain-routine-bedshare",
+    "publication": "National Geographic",
+    "description": "Getting your baby to sleep can be a nightmare. Sleep experts know a better way.",
+    "image": "img/portfolio/babysleep.jpg",
+    "date": "2025-02-11"
+  },
+  {
+    "title": "How Octopus Arms Bypass the Brain",
+    "url": "https://www.scientificamerican.com/article/how-octopus-arms-bypass-the-brain/",
+    "publication": "Scientific American",
+    "description": "",
+    "image": "img/portfolio/octoAnat.jpg",
+    "date": "2023-02-14"
+  },
+  {
+    "title": "The changing landscape of science filmmaking",
+    "url": "https://www.nasw.org/article/changing-landscape-science-filmmaking",
+    "publication": "National Association of Science Writers Student Newsroom",
+    "description": "",
+    "image": "img/portfolio/ScienceFilmmaking.jpg",
+    "date": "2021-10-19"
+  },
+  {
+    "title": "That’s Your Stomach Talking: Grass Fellow Studies Gut-Brain Link",
+    "url": "https://www.mbl.edu/news/thats-your-stomach-talking-grass-fellow-studies-gut-brain-link",
+    "publication": "Marine Biological Laboratory",
+    "description": "Grass Fellow Maya Kaelberer wants to listen in on brain-gut communication.",
+    "image": "img/portfolio/Maya.jpeg",
+    "date": "2022-07-06"
+  },
+  {
+    "title": "Auditory cortex may develop early in autism",
+    "url": "https://www.spectrumnews.org/news/auditory-cortex-may-develop-early-in-autism/",
+    "publication": "Spectrum News",
+    "description": "Magnetoencephalography shows a premature onset of M100 responses in autistic children in new work from J. Christopher Edgar and colleagues.",
+    "image": "img/portfolio/MEG.jpg",
+    "date": "2022-09-16"
+  },
+  {
+    "title": "Two Neuroscience Laws Governing How We Sense the World Finally United After 67 Years",
+    "url": "https://www.simonsfoundation.org/2024/06/17/two-neuroscience-laws-governing-how-we-sense-the-world-finally-united-after-67-years/",
+    "publication": "Simons Institute",
+    "description": "Neuroscientists at the Flatiron Institute and New York University developed a new theoretical framework that describes our ability to both absolutely and relatively gauge the properties of sensory inputs",
+    "image": "img/portfolio/simons.png",
+    "date": "2024-06-17"
+  },
+  {
+    "title": "Hope for Niemann-Pick type C in FDA’s dual drug approval",
+    "url": "https://www.drugdiscoverynews.com/hope-for-niemann-pick-type-c-in-fda-s-dual-drug-approval-16181",
+    "publication": "Drug Discovery News",
+    "description": "",
+    "image": "img/portfolio/npc.png",
+    "date": "2024-12-20"
+  },
+  {
+    "title": "A squid-inspired medical device could reduce the need for needles",
+    "url": "https://www.sciencenews.org/article/squid-inspired-medical-device-needles",
+    "publication": "Science News",
+    "description": "",
+    "image": "img/portfolio/squidmedical.png",
+    "date": "2024-12-09"
+  },
+  {
+    "title": "A Potential Therapy for “Chemobrain”",
+    "url": "https://www.cuimc.columbia.edu/news/potential-therapy-chemobrain",
+    "publication": "Columbia University Medical Center",
+    "description": "",
+    "image": "img/portfolio/chemobrain.png",
+    "date": "2023-10-19"
+  },
+  {
+    "title": "The classic map of how the human brain manages movement gets an update",
+    "url": "https://www.sciencenews.org/article/map-human-brain-movement-homunculus",
+    "publication": "Science News",
+    "description": "",
+    "image": "img/portfolio/homunculus.jpg",
+    "date": "2023-04-20"
+  },
+  {
+    "title": "Telling Time: Eel Pond’s Striped Bass Help MBL Scientists Characterize Biological Rhythms",
+    "url": "https://www.mbl.edu/news/telling-time-eel-ponds-striped-bass-help-mbl-scientists-characterize-biological-rhythms",
+    "publication": "Marine Biological Laboratory",
+    "description": "Striped bass in MBL's Eel Pond are helping inaugural MBL Barbey Fellow Brian Prendergast study how circadian rhythms change in response to environmental shifts.",
+    "image": "img/portfolio/tellingTime.jpg",
+    "date": "2022-05-02"
+  },
+  {
+    "title": "Live Fast, Die Young: Grass Fellow Explores Octopus's Death Spiral",
+    "url": "https://www.mbl.edu/news/live-fast-die-young-grass-fellow-explores-octopuss-death-spiral",
+    "publication": "Marine Biological Laboratory",
+    "description": "Most octopuses die after the first time they reproduce, and Grass Fellow Z. Yan Wang wants to know why.",
+    "image": "img/portfolio/Yan.jpg",
+    "date": "2022-07-07"
+  },
+  {
+    "title": "Human echolocation works step by step",
+    "url": "https://www.sciencenews.org/article/human-echolocation-blind-brain",
+    "publication": "Science News",
+    "description": "",
+    "image": "img/portfolio/echolocation.jpg",
+    "date": "2026-04-06"
+  },
+  {
+    "title": "The problem with 'happiness'",
+    "url": "https://www.nationalgeographic.com/health/article/happiness-well-being-culture-community",
+    "publication": "National Geographic",
+    "description": "",
+    "image": "img/portfolio/happiness.jpg",
+    "date": "2025-05-02"
+  },
+  {
+    "title": "Stimulating spleens with ultrasound hints at a treatment for inflammation",
+    "url": "https://www.sciencenews.org/article/spleen-ultrasound-treatment-inflammation",
+    "publication": "Science News",
+    "description": "",
+    "image": "img/portfolio/ultrasounds.jpg",
+    "date": "2023-05-17"
+  },
+  {
+    "title": "Population-based study reveals strong genetic links with multiple cardiometabolic diseases and traits",
+    "url": "https://www.broadinstitute.org/news/population-based-study-reveals-strong-genetic-links-multiple-cardiometabolic-diseases-and-0",
+    "publication": "Broad Institute of MIT and Harvard",
+    "description": "Broad scientists analyzed sequencing data from more than 200,000 people and found rare genetic variants associated with diseases like diabetes and heart failure.",
+    "image": "img/portfolio/Cardiometabolic.jpg",
+    "date": "2022-04-19"
+  },
+  {
+    "title": "What Your Brain Is Doing When You’re Not Doing Anything",
+    "url": "https://www.quantamagazine.org/what-your-brain-is-doing-when-youre-not-doing-anything-20240205/#",
+    "publication": "Quanta Magazine",
+    "description": "When your mind is wandering, your brain’s ‘default mode’ network is active. Its discovery 20 years ago inspired a raft of research into networks of brain regions and how they interact with each other",
+    "image": "img/portfolio/dmn.jpg",
+    "date": "2024-02-05"
+  },
+  {
+    "title": "Did Mount Vesuvius’ ash cloud really transform a brain into glass?",
+    "url": "https://www.nationalgeographic.com/history/article/herculaneum-vesuvius-eruption-brain-glass",
+    "publication": "National Geographic",
+    "description": "",
+    "image": "img/portfolio/brainglass.jpg",
+    "date": "2025-03-07"
+  },
+  {
+    "title": "Clickbait, consciousness science, and responsible journalism",
+    "url": "https://www.youtube.com/watch?v=dUXfgzKHV1c",
+    "publication": "Was a guest on ActInf GuestStream 049.1",
+    "description": "",
+    "image": "img/portfolio/actInfInst.png",
+    "date": "2023-07-26"
+  },
+  {
+    "title": "The Evolution of Evo-Devo",
+    "url": "https://www.mbl.edu/news/evolution-evo-devo",
+    "publication": "Marine Biological Laboratory",
+    "description": "Evo-devo scientists investigate how animal embryos develop, which allows them to make inferences about evolutionary change.",
+    "image": "img/portfolio/evodevo.jpg",
+    "date": "2022-06-28"
+  },
+  {
+    "title": "What color is this dot? New illusion demonstrates weird vision quirk",
+    "url": "https://www.scientificamerican.com/article/what-color-is-this-dot-new-illusion-demonstrates-weird-vision-quirk/",
+    "publication": "Scientific American",
+    "description": "",
+    "image": "img/portfolio/illusion.jpg",
+    "date": "2026-03-23"
+  },
+  {
+    "title": "Young corn leaves can ‘smell’ danger",
+    "url": "https://www.snexplores.org/article/young-corn-leaves-smell-danger-plants-chemistry",
+    "publication": "Science News Explores",
+    "description": "As they mature, these leaves lose their ability to detect threatening scents.",
+    "image": "img/portfolio/cornsmell.jpg",
+    "date": "2023-11-27"
+  },
+  {
+    "title": "Why a Classic Psychology Theory about Vision Has Fallen Apart",
+    "url": "https://www.scientificamerican.com/article/does-culture-change-visual-perception-debunking-the-carpentered-world/",
+    "publication": "Scientific American",
+    "description": "",
+    "image": "img/portfolio/perception.jpg",
+    "date": "2025-09-22"
+  },
+  {
+    "title": "Imagination is not just replaying what we see and hear",
+    "url": "https://www.sciencenews.org/article/imagination-perception-overlap-brain-neuroscience",
+    "publication": "Science News",
+    "description": "",
+    "image": "img/portfolio/mentalimagery.jpg",
+    "date": "2026-04-23"
+  },
+  {
+    "title": "Human Gut Bacteria Can Gather Up PFAS ‘Forever Chemicals’",
+    "url": "https://www.scientificamerican.com/article/human-gut-bacteria-can-gather-up-pfas-forever-chemicals/",
+    "publication": "Scientific American",
+    "description": "",
+    "image": "img/portfolio/pfas.png",
+    "date": "2025-07-04"
+  },
+  {
+    "title": "Opening the Black Box of Late Neurodevelopment",
+    "url": "https://www.mbl.edu/news/opening-black-box-late-neurodevelopment",
+    "publication": "Marine Biological Laboratory",
+    "description": "Nearly every stage of C. elegans development + life has been studied in great detail, except the last 6 hours of embryogenesis. A new study emerging from a collab at MBL zeroes in on that critical time by using new imaging techniques + computational tools.",
+    "image": "img/portfolio/neurodev.gif",
+    "date": "2022-08-18"
+  },
+  {
+    "title": "Pregnancy transforms the brain—and some changes last forever",
+    "url": "https://archive.ph/CPI2y",
+    "publication": "National Geographic",
+    "description": "For the first time, scientists have observed the brain throughout the pregnancy timeline, from pre-conception to postpartum.",
+    "image": "img/portfolio/pregbrain.png",
+    "date": "2023-09-20"
+  },
+  {
+    "title": "Humans Can Spot Tiny Numerical Differences",
+    "url": "https://www.scientificamerican.com/article/humans-can-spot-tiny-numerical-differences/",
+    "publication": "Scientific American",
+    "description": "",
+    "image": "img/portfolio/numbers.png",
+    "date": "2023-07-01"
+  },
+  {
+    "title": "Cellular Collaboration: Whitman Fellow Shines Light on Unique Symbiosis",
+    "url": "https://www.mbl.edu/news/cellular-collaboration-whitman-fellow-shines-light-unique-symbiosis",
+    "publication": "Marine Biological Laboratory",
+    "description": "",
+    "image": "img/portfolio/sten.gif",
+    "date": "2022-07-22"
+  },
+  {
+    "title": "Brain waves synchronize when enjoying music, lessening depression",
+    "url": "https://www.drugdiscoverynews.com/brain-waves-synchronize-when-enjoying-music-lessening-depression-16141",
+    "publication": "Drug Discovery News",
+    "description": "Brain waves synchronize when enjoying music, lessening depression.",
+    "image": "img/portfolio/musicBrain.png",
+    "date": "2024-11-24"
+  },
+  {
+    "title": "Finding nonantibiotic solutions to resistant UTI",
+    "url": "https://www.drugdiscoverynews.com/finding-nonantibiotic-solutions-to-resistant-uti-15915",
+    "publication": "Drug Discovery News",
+    "description": "",
+    "image": "img/portfolio/uti.png",
+    "date": "2024-04-18"
+  },
+  {
+    "title": "Human brains found at archaeological sites are surprisingly well-preserved",
+    "url": "https://www.sciencenews.org/article/human-brains-archaeological-sites-preserved-archaeology",
+    "publication": "Science News",
+    "description": "",
+    "image": "img/portfolio/preserved.png",
+    "date": "2024-03-19"
+  },
+  {
+    "title": "Bee Building blocks",
+    "url": "https://lohdownonscience.com/bee-building-blocks-2/",
+    "publication": "The Loh Down on Science",
+    "description": "Bob the Builder – meet Bee the Builder!",
+    "image": "img/portfolio/Bees.jpg",
+    "date": "2021-11-22"
+  }
+]
