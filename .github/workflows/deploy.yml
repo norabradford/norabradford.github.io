@@ -22,23 +22,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
-      - uses: actions/setup-python@v7
+      - uses: astral-sh/setup-uv@v9
         with:
+          enable-cache: true
           python-version: "3.11"
-      - uses: astral-sh/ruff-action@v4.1.0
-        with:
-          version: 0.16.1
-          args: check --fix --output-format=github
-          src: "."
-      - uses: astral-sh/ruff-action@v4.1.0
-        with:
-          version: 0.16.1
-          args: format
-          src: "."
-      - run: python3 -m unittest discover -s tests -v
-      - run: python3 scripts/add-story.py --check
+          version: 0.11.32
+      - run: uv sync --locked
+      - run: uv run --locked ruff check --fix --output-format=github .
+      - run: uv run --locked ruff format .
+      - run: uv run --locked python -m unittest discover -s tests -v
+      - run: uv run --locked python scripts/add-story.py --check
       - uses: actions/configure-pages@v6
-      - run: python3 scripts/build.py
+      - run: uv run --locked python scripts/build.py
       - uses: actions/upload-pages-artifact@v5
         with:
           path: dist

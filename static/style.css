@@ -164,6 +164,7 @@ h3 {
 .story-image {
   display: block;
   width: 100%;
+  height: auto;
   aspect-ratio: 16/10;
   background: #e5e6e1;
   object-fit: cover;
