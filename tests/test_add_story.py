@@ -164,9 +164,7 @@ class AddStoryTests(unittest.TestCase):
     def test_known_outlet_name_removes_title_suffix(self) -> None:
         page = '<meta property="og:title" content="Do Plants Think? - Elucidations Podcast">'
 
-        entry = add_story.story_from_html(
-            "https://elucidations.vercel.app/posts/episode", page
-        )
+        entry = add_story.story_from_html("https://elucidations.vercel.app/posts/episode", page)
 
         self.assertEqual(entry["title"], "Do Plants Think?")
         self.assertEqual(entry["publication"], "Elucidations Podcast")
@@ -186,9 +184,7 @@ By Nora Bradford
 Urinary tract infections affect millions of people every year, and a new study points to the microbiome as a possible cause.
 """
 
-        entry = add_story.story_from_page(
-            "https://www.broadinstitute.org/news/example", page
-        )
+        entry = add_story.story_from_page("https://www.broadinstitute.org/news/example", page)
 
         self.assertEqual(
             entry["title"],
@@ -200,9 +196,7 @@ Urinary tract infections affect millions of people every year, and a new study p
             "Urinary tract infections affect millions of people every year, and a new "
             "study points to the microbiome as a possible cause.",
         )
-        self.assertEqual(
-            entry["image"], "http://www.broadinstitute.org/files/article.jpg"
-        )
+        self.assertEqual(entry["image"], "http://www.broadinstitute.org/files/article.jpg")
         self.assertEqual(entry["date"], "2022-05-02")
 
     def test_fetch_retries_blocked_pages_through_reader(self) -> None:
@@ -237,9 +231,7 @@ Urinary tract infections affect millions of people every year, and a new study p
                 raise error
             return Response()
 
-        result = add_story.fetch_page(
-            "https://www.broadinstitute.org/news/example", opener=opener
-        )
+        result = add_story.fetch_page("https://www.broadinstitute.org/news/example", opener=opener)
 
         self.assertEqual(result, page.decode())
         self.assertEqual(

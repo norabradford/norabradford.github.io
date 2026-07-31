@@ -59,11 +59,7 @@ class MetadataParser(HTMLParser):
     def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
         attributes = {key.lower(): value or "" for key, value in attrs}
         if tag == "meta":
-            key = (
-                attributes.get("property")
-                or attributes.get("name")
-                or attributes.get("itemprop")
-            )
+            key = attributes.get("property") or attributes.get("name") or attributes.get("itemprop")
             content = attributes.get("content")
             if key and content:
                 self.meta.setdefault(key.lower(), content.strip())
@@ -158,8 +154,7 @@ def canonical_url(url: str) -> str:
         [
             (key, value)
             for key, value in parse_qsl(parts.query, keep_blank_values=True)
-            if not key.lower().startswith("utm_")
-            and key.lower() not in TRACKING_PARAMETERS
+            if not key.lower().startswith("utm_") and key.lower() not in TRACKING_PARAMETERS
         ]
     )
     path = parts.path.rstrip("/") or "/"
@@ -199,9 +194,7 @@ def nested_text(value: object, *keys: str) -> str:
     if isinstance(value, list):
         return next((text for item in value if (text := nested_text(item, *keys))), "")
     if isinstance(value, dict):
-        return next(
-            (text for key in keys if (text := nested_text(value.get(key), *keys))), ""
-        )
+        return next((text for key in keys if (text := nested_text(value.get(key), *keys))), "")
     return ""
 
 
@@ -230,9 +223,7 @@ def story_from_html(url: str, page: str) -> dict[str, str]:
         or nested_text(structured.get("description"), "text")
         or paragraph
     )
-    if paragraph and clean_text(description).lower().startswith(
-        "view recent and archived"
-    ):
+    if paragraph and clean_text(description).lower().startswith("view recent and archived"):
         description = paragraph
     image = (
         meta.get("og:image")
@@ -273,24 +264,17 @@ def story_from_reader(url: str, page: str) -> dict[str, str]:
     }
     heading = re.search(r"(?m)^#\s+(.+?)\s*$", markdown)
     article = markdown[heading.end() :] if heading else markdown
-    title = (
-        markdown_text(heading.group(1)) if heading else clean_text(fields.get("Title"))
-    )
+    title = markdown_text(heading.group(1)) if heading else clean_text(fields.get("Title"))
     header_title = clean_text(fields.get("Title"))
-    site_name = (
-        header_title.rsplit(" | ", 1)[-1] if " | " in header_title else header_title
-    )
-    site_name = re.sub(
-        r"\s+(?:home(?:page)?|news)$", "", site_name, flags=re.IGNORECASE
-    )
+    site_name = header_title.rsplit(" | ", 1)[-1] if " | " in header_title else header_title
+    site_name = re.sub(r"\s+(?:home(?:page)?|news)$", "", site_name, flags=re.IGNORECASE)
     publication = publication_name(url, site_name if site_name != title else "")
     image_match = re.search(r"!\[[^]]*]\((https?://[^)\s]+)", article)
     description = next(
         (
             text
             for block in re.split(r"\n\s*\n", article)
-            if len(text := markdown_text(block)) >= 80
-            and not text.lower().startswith("by ")
+            if len(text := markdown_text(block)) >= 80 and not text.lower().startswith("by ")
         ),
         "",
     )
@@ -344,9 +328,7 @@ def fetch_page(url: str, opener: Callable[..., Any] = urlopen) -> str:
         try:
             return download(request_for(fallback, "text/plain"), opener)
         except (HTTPError, URLError) as fallback_error:
-            raise StoryError(
-                f"The publisher blocked this page: {url}"
-            ) from fallback_error
+            raise StoryError(f"The publisher blocked this page: {url}") from fallback_error
     except URLError as error:
         raise StoryError(f"Could not open {url}: {error.reason}") from error
 
@@ -381,11 +363,7 @@ def validate_stories(stories: list[dict[str, Any]], root: Path = ROOT) -> list[s
         if published and not re.fullmatch(r"\d{4}-\d{2}-\d{2}", published):
             errors.append(f"{label}: invalid date {published!r}")
         image = clean_text(story.get("image"))
-        if (
-            image
-            and not image.startswith(("http://", "https://"))
-            and not (root / image).is_file()
-        ):
+        if image and not image.startswith(("http://", "https://")) and not (root / image).is_file():
             errors.append(f"{label}: image not found: {image}")
         links = story.get("links", [])
         if not isinstance(links, list) or any(
@@ -416,15 +394,11 @@ def add_story(
 def parse_args(arguments: list[str] | None = None) -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("url", nargs="?", help="published story URL")
-    parser.add_argument(
-        "--check", action="store_true", help="validate the existing story database"
-    )
+    parser.add_argument("--check", action="store_true", help="validate the existing story database")
     parser.add_argument(
         "--dry-run", action="store_true", help="fetch metadata without changing files"
     )
-    parser.add_argument(
-        "--database", type=Path, default=STORIES, help=argparse.SUPPRESS
-    )
+    parser.add_argument("--database", type=Path, default=STORIES, help=argparse.SUPPRESS)
     args = parser.parse_args(arguments)
     if args.check == bool(args.url):
         parser.error("provide a URL, or use --check")

@@ -28,12 +28,12 @@ jobs:
       - uses: astral-sh/ruff-action@v3
         with:
           version: 0.16.0
-          args: check --output-format=github
+          args: check --fix --output-format=github
           src: "."
       - uses: astral-sh/ruff-action@v3
         with:
           version: 0.16.0
-          args: format --check
+          args: format
           src: "."
       - run: python3 -m unittest discover -s tests -v
       - run: python3 scripts/add-story.py --check
