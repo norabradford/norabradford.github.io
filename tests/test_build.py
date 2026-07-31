@@ -198,6 +198,14 @@ class BuildTests(unittest.TestCase):
             with self.subTest(text=text):
                 self.assertIn(text, page)
 
+    def test_nora_bradford_is_bolded_in_cv_author_lists(self) -> None:
+        source = (ROOT / "content" / "cv.md").read_text()
+        page = (self.dist / "cv.html").read_text()
+
+        self.assertEqual(
+            page.count("<strong>N. Bradford</strong>"), source.count("N. Bradford")
+        )
+
     def test_cv_title_precedes_the_print_control(self) -> None:
         page = (self.dist / "cv.html").read_text()
 

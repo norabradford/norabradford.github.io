@@ -146,26 +146,26 @@ Advisor: Dr. Megan Peters
 
 ### Publications and Conference Proceedings
 
-1. L. Montgomery, N. Bradford, and M. Lee, “The wisdom of the crowd with partial rankings: A Bayesian approach implementing the Thurstone model in JAGS”, *Behavior Research Methods*, 2024.
-2. N. Bradford, A. Shen, B. Odegaard, and M. A. K. Peters, “Aligning consciousness science and U.S. funding agency priorities”, *Communications Biology*, 2024.
-3. Y. Xu, N. Bradford, and R. Garg, “Transparency enhances positive perceptions of social artificial intelligence”, *Human Behavior and Emerging Technologies*, 2023.
-4. Y. Xu, D. Wang, M. Yu, D. Ritchie, B. Yao, T. Wu, Z. Zhang, T. Li, N. Bradford, B. Sun, T. Hoang, Y. Sang, Y. Hou, X. Ma, D. Yang, N. Peng, Z. Yu, and M. Warschauer, “Fantastic questions and where to find them: FairytaleQA—an authentic dataset for narrative comprehension”, *Association for Computational Linguistics*, 2022.
-5. G. Grasselli, H. Boele, H. Titley, N. Bradford, L. van Beers, L. Jay, G. C. Beekhof, S. E. Busch, C. De Zeeuw, M. Schonewille, and C. Hansel, “SK2 channels in cerebellar Purkinje cells contribute to excitability modulation in motor-learning–specific memory traces”, *PLOS Biology*, 2020.
+1. L. Montgomery, **N. Bradford**, and M. Lee, “The wisdom of the crowd with partial rankings: A Bayesian approach implementing the Thurstone model in JAGS”, *Behavior Research Methods*, 2024.
+2. **N. Bradford**, A. Shen, B. Odegaard, and M. A. K. Peters, “Aligning consciousness science and U.S. funding agency priorities”, *Communications Biology*, 2024.
+3. Y. Xu, **N. Bradford**, and R. Garg, “Transparency enhances positive perceptions of social artificial intelligence”, *Human Behavior and Emerging Technologies*, 2023.
+4. Y. Xu, D. Wang, M. Yu, D. Ritchie, B. Yao, T. Wu, Z. Zhang, T. Li, **N. Bradford**, B. Sun, T. Hoang, Y. Sang, Y. Hou, X. Ma, D. Yang, N. Peng, Z. Yu, and M. Warschauer, “Fantastic questions and where to find them: FairytaleQA—an authentic dataset for narrative comprehension”, *Association for Computational Linguistics*, 2022.
+5. G. Grasselli, H. Boele, H. Titley, **N. Bradford**, L. van Beers, L. Jay, G. C. Beekhof, S. E. Busch, C. De Zeeuw, M. Schonewille, and C. Hansel, “SK2 channels in cerebellar Purkinje cells contribute to excitability modulation in motor-learning–specific memory traces”, *PLOS Biology*, 2020.
 
 ### Selected Talks
 
-1. N. Bradford, B. Maniscalco, and M. Peters, Model-based approach for extracting performance-independent metacognitive sensitivity from meta-learning data, New York, NY, Jun. 2023.
-2. N. Bradford and M. Peters, Metacognition and learning: Bridging the gap between the lab and the classroom, 2023 International Conference on Learning and Memory, Huntington Beach, CA, Apr. 2023.
-3. M. Lee, N. Bradford, and H. Tejeda, Using Thurstonian ranking models to find the wisdom of the crowd, European Mathematical Psychology Group Meeting, Rovereto, Italy, Sep. 2022.
-4. N. Bradford and M. Peters, Effects of perceived numerosity on confidence, Association for the Scientific Study of Consciousness Annual Meeting, Amsterdam, the Netherlands, Jul. 2022.
-5. N. Bradford and M. Peters, Investigating metacognitive sensitivity in online learning tool for undergraduates, Neuromatch Conference, virtual, Dec. 2021.
+1. **N. Bradford**, B. Maniscalco, and M. Peters, Model-based approach for extracting performance-independent metacognitive sensitivity from meta-learning data, New York, NY, Jun. 2023.
+2. **N. Bradford** and M. Peters, Metacognition and learning: Bridging the gap between the lab and the classroom, 2023 International Conference on Learning and Memory, Huntington Beach, CA, Apr. 2023.
+3. M. Lee, **N. Bradford**, and H. Tejeda, Using Thurstonian ranking models to find the wisdom of the crowd, European Mathematical Psychology Group Meeting, Rovereto, Italy, Sep. 2022.
+4. **N. Bradford** and M. Peters, Effects of perceived numerosity on confidence, Association for the Scientific Study of Consciousness Annual Meeting, Amsterdam, the Netherlands, Jul. 2022.
+5. **N. Bradford** and M. Peters, Investigating metacognitive sensitivity in online learning tool for undergraduates, Neuromatch Conference, virtual, Dec. 2021.
 
 ### Selected Posters
 
-1. N. Bradford and M. Peters, Investigating the domain-generality of metacognition among memory, perception, and intuitive reasoning, Association for the Scientific Study of Consciousness meeting, Tokyo, Japan, Jul. 2024.
-2. N. Bradford and M. Peters, Metacognition and learning: Bridging the gap between the lab and the classroom, 2023 International Conference on Learning and Memory, Huntington Beach, CA, Apr. 2023.
-3. N. Bradford, E. Tao, V. Nguyen, and L. Kay, Testing piriform cortex inputs to granule cells as modulators of excitability leading to beta oscillations, Midwestern Psychological Association Annual Meeting, Chicago, IL, Apr. 2019.
-4. N. Bradford, E. Tao, V. Nguyen, and L. Kay, Testing piriform cortex inputs to granule cells as modulators of excitability leading to beta oscillations, Midstates Consortium for Math and Science Undergraduate Research Symposium on Biological Sciences and Psychology, Chicago, IL, Nov. 2018.
+1. **N. Bradford** and M. Peters, Investigating the domain-generality of metacognition among memory, perception, and intuitive reasoning, Association for the Scientific Study of Consciousness meeting, Tokyo, Japan, Jul. 2024.
+2. **N. Bradford** and M. Peters, Metacognition and learning: Bridging the gap between the lab and the classroom, 2023 International Conference on Learning and Memory, Huntington Beach, CA, Apr. 2023.
+3. **N. Bradford**, E. Tao, V. Nguyen, and L. Kay, Testing piriform cortex inputs to granule cells as modulators of excitability leading to beta oscillations, Midwestern Psychological Association Annual Meeting, Chicago, IL, Apr. 2019.
+4. **N. Bradford**, E. Tao, V. Nguyen, and L. Kay, Testing piriform cortex inputs to granule cells as modulators of excitability leading to beta oscillations, Midstates Consortium for Math and Science Undergraduate Research Symposium on Biological Sciences and Psychology, Chicago, IL, Nov. 2018.
 
 ## Training
 
