@@ -1,0 +1,46 @@
+name: Deploy site
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+      - uses: astral-sh/ruff-action@v3
+        with:
+          version: 0.16.0
+          args: check --output-format=github
+          src: "."
+      - uses: astral-sh/ruff-action@v3
+        with:
+          version: 0.16.0
+          args: format --check
+          src: "."
+      - run: python3 -m unittest discover -s tests -v
+      - run: python3 scripts/add-story.py --check
+      - uses: actions/configure-pages@v5
+      - run: python3 scripts/build.py
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+      - id: deployment
+        uses: actions/deploy-pages@v4
