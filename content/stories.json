@@ -644,5 +644,101 @@
     "description": "Bob the Builder – meet Bee the Builder!",
     "image": "img/portfolio/Bees.jpg",
     "date": "2021-11-22"
+  },
+  {
+    "title": "Crabs can’t hide from an octopus with a mirror",
+    "url": "https://www.sciencenews.org/article/octopus-hunt-crabs-with-mirror",
+    "publication": "Science News",
+    "description": "New experiments show that octopuses can understand where an item is based solely on its reflection.",
+    "image": "img/portfolio/crabs-can-t-hide-from-an-octopus-with-a-mirror-d9783f89.jpg",
+    "date": "2026-06-30"
+  },
+  {
+    "title": "A tiny part of your brain may still listen under anesthesia",
+    "url": "https://www.sciencenews.org/article/brain-cells-listen-under-anesthesia",
+    "publication": "Science News",
+    "description": "Tones, oddball sounds and words can spark brain cell responses, hinting at nuanced processing without consciousness.",
+    "image": "img/portfolio/a-tiny-part-of-your-brain-may-still-listen-under-anesthesia-b819a00c.webp",
+    "date": "2026-06-01"
+  },
+  {
+    "title": "These Stunning Images Show Every Nerve in a Mouse",
+    "url": "https://www.scientificamerican.com/article/see-the-first-complete-map-of-a-mammals-peripheral-nervous-system-in",
+    "publication": "Scientific American",
+    "description": "This new “connectome” could bring researchers one step closer to understanding how nerves connect to organs throughout the body",
+    "image": "img/portfolio/these-stunning-images-show-every-nerve-in-a-mouse-5423024a.webp",
+    "date": "2025-08-27"
+  },
+  {
+    "title": "New Interstellar Object Stuns Scientists as It Zooms through Solar System",
+    "url": "https://www.scientificamerican.com/article/new-interstellar-object-comet-3i-atlas-what-we-know-so-far-as-it-zips",
+    "publication": "Scientific American",
+    "description": "All eyes are on Comet 3I/ATLAS as astronomers worldwide chase the exotic ice ball through our solar system",
+    "image": "img/portfolio/new-interstellar-object-stuns-scientists-as-it-zooms-through-solar-syste-1ed9f520.webp",
+    "date": "2025-07-03"
+  },
+  {
+    "title": "How to help research reach the most vulnerable",
+    "url": "https://www.nasw.org/article/nasw-science-writers-education-committee-2024-aaas-mentoring-nora-bradford",
+    "publication": "National Association of Science Writers",
+    "description": "Scientists note that inclusive science doesn’t just mean diversifying the workforce. It also means producing inclusive outcomes.",
+    "image": "img/portfolio/how-to-help-research-reach-the-most-vulnerable-20033f88.png",
+    "date": "2024-02-27"
+  },
+  {
+    "title": "Bringing a \"fresh” perspective to welcome events at ScienceWriters annual meetings",
+    "url": "https://www.nasw.org/article/science-writers-2023-sciwri23-nasw-conference-fresh-faces-first-time-attendees-welcome-rode-kumari",
+    "publication": "National Association of Science Writers",
+    "description": "SciWri23 travel grantee Nora Bradford reports on the \"Fresh Faces\" NASW networking socials online and in Boulder organized by Angel Kumari and Erin Rode.",
+    "image": "img/portfolio/bringing-a-fresh-perspective-to-welcome-events-at-sciencewriters-annual-d6684938.jpg",
+    "date": "2023-10-25"
+  },
+  {
+    "title": "#WhyIScience Q&A: An aspiring physician-scientist investigates health through the eye",
+    "url": "https://www.broadinstitute.org/blog/whyiscience-qa-aspiring-physician-scientist-investigates-health-through-eye",
+    "publication": "Broad Institute",
+    "description": "During an undergraduate summer research program in Switzerland, Maryam Zekavat became fascinated with a crucial, yet often overlooked part of the body — the eye. After researching eye diseases and observing ophthalmology in the clinic, she knew she wanted to learn more about the eye’s connections to the brain, the vasculature, and the rest of the body.",
+    "image": "img/portfolio/whyiscience-q-a-an-aspiring-physician-scientist-investigates-health-thro-6e3d7705.jpg",
+    "date": "2022-03-21"
+  },
+  {
+    "title": "Making 100,000 whole genome sequences available",
+    "url": "https://www.broadinstitute.org/news/making-100000-whole-genome-sequences-available",
+    "publication": "Broad Institute",
+    "description": "A Broad data scientist discusses his team’s efforts to build new tools for researchers to access and study the genomic data recently released by NIH’s All of Us Research Program.",
+    "image": "img/portfolio/making-100-000-whole-genome-sequences-available-fc9d819b.png",
+    "date": "2022-03-21"
+  },
+  {
+    "title": "#WhyIScience Q&A: A computer scientist builds data-protection tools and is raising awareness about cybersecurity",
+    "url": "https://www.broadinstitute.org/blog/whyiscience-qa-computer-scientist-builds-data-protection-tools-and-raising-awareness-about",
+    "publication": "Broad Institute",
+    "description": "As a child, Anitta Namanya could regularly be found rewiring the TV and other gadgets around the house. When her father came home with a cell phone, she noticed it was not connected to the wall and immediately wanted to understand how it communicated with other cell phones without any wires. She remembers thinking, “I want to be an engineer to figure that out.”",
+    "image": "img/portfolio/whyiscience-q-a-a-computer-scientist-builds-data-protection-tools-and-is-5aa5ae2f.jpg",
+    "date": "2022-02-04"
+  },
+  {
+    "title": "Research in action",
+    "url": "https://www.socsci.uci.edu/newsevents/news/2021/2021-10-15-gillooly.php",
+    "publication": "UCI Social Sciences",
+    "description": "For most new graduate students, the first program year is spent learning the university and departmental ropes while juggling coursework and teaching assistantship responsibilities - a full-time gig that leaves little time for much else. For Shauna Gillooly, ’21 political science Ph.D., her first year was spent finalizing plans to pursue a bold research fieldwork agenda on the Pacific Coast of Colombia.",
+    "image": "img/portfolio/research-in-action-4b19be9a.jpg",
+    "date": "2021-10-15"
+  },
+  {
+    "title": "Understanding economic inequality, one experiment at a time",
+    "url": "https://www.socsci.uci.edu/newsevents/news/2021/2021-10-19-sharma-economics.php",
+    "publication": "UCI Social Sciences",
+    "description": "From the streets of India to experimental rooms at UCI, Nishtha Sharma, UCI economics Ph.D. candidate, studies how economic discrimination affects individuals’ decisions. Her work has covered topics like gender discrimination in her field and attitudes toward those who ask for money at city intersections. She hopes that through her work, she can begin to tackle economic discrimination based on gender, race, immigration status, religion, and other identity markers.",
+    "image": "img/portfolio/understanding-economic-inequality-one-experiment-at-a-time-5249934e.jpg",
+    "date": "2021-10-19"
+  },
+  {
+    "title": "Most neurons seem to be jacks-of-all-trades, not specialists",
+    "url": "https://www.newscientist.com/article/2581104-most-neurons-seem-to-be-jacks-of-all-trades-not-specialists",
+    "publication": "New Scientist",
+    "description": "We tend to think of the brain as being made up of highly specialised cells, but a study in mice suggests that most neurons are generalists",
+    "image": "img/portfolio/most-neurons-seem-to-be-jacks-of-all-trades-not-specialists-3227eb40.jpg",
+    "date": "2026-07-24"
   }
 ]
