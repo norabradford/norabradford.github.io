@@ -53,21 +53,130 @@ class AddStoryTests(unittest.TestCase):
         </head></html>
         """
         with tempfile.TemporaryDirectory() as directory:
-            database = Path(directory) / "stories.json"
+            root = Path(directory)
+            database = root / "stories.json"
             database.write_text("[]\n")
             entry = add_story.add_story(
                 "https://example.com/new-story?utm_source=newsletter",
                 database,
                 lambda _: page,
+                image_fetcher=lambda _: (b"story image", "image/jpeg"),
+                root=root,
             )
 
             self.assertEqual(entry["title"], "A newly reported story")
             self.assertEqual(entry["url"], "https://example.com/new-story")
             self.assertEqual(entry["publication"], "Science Example")
             self.assertEqual(entry["description"], "A concise description.")
-            self.assertEqual(entry["image"], "https://example.com/images/story.jpg")
+            self.assertRegex(
+                entry["image"], r"^img/portfolio/a-newly-reported-story-[0-9a-f]{8}\.jpg$"
+            )
             self.assertEqual(entry["date"], "2026-07-29")
             self.assertEqual(json.loads(database.read_text(encoding="utf-8")), [entry])
+
+    def test_downloads_story_image_to_portfolio_assets(self) -> None:
+        page = """
+        <meta property="og:title" content="A newly reported story">
+        <meta property="og:image" content="https://cdn.example.com/photo?id=42">
+        """
+        image = b"downloaded image bytes"
+        requested_images: list[str] = []
+
+        def fetch_image(url: str) -> tuple[bytes, str]:
+            requested_images.append(url)
+            return image, "image/png"
+
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            database = root / "content" / "stories.json"
+            database.parent.mkdir()
+            database.write_text("[]\n", encoding="utf-8")
+
+            entry = add_story.add_story(
+                "https://example.com/new-story",
+                database,
+                lambda _: page,
+                image_fetcher=fetch_image,
+                root=root,
+            )
+
+            self.assertEqual(requested_images, ["https://cdn.example.com/photo?id=42"])
+            self.assertRegex(
+                entry["image"], r"^img/portfolio/a-newly-reported-story-[0-9a-f]{8}\.png$"
+            )
+            self.assertEqual((root / entry["image"]).read_bytes(), image)
+            self.assertEqual(json.loads(database.read_text(encoding="utf-8")), [entry])
+
+    def test_batch_option_adds_each_link_from_a_file(self) -> None:
+        pages = {
+            "https://example.com/first": '<meta property="og:title" content="First story">',
+            "https://example.com/second": '<meta property="og:title" content="Second story">',
+        }
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            database = root / "content" / "stories.json"
+            database.parent.mkdir()
+            database.write_text("[]\n", encoding="utf-8")
+            batch = root / "links.txt"
+            batch.write_text(
+                "# Stories to import\n\nhttps://example.com/first\nhttps://example.com/second\n",
+                encoding="utf-8",
+            )
+            self.assertEqual(add_story.parse_args(["--batch", str(batch)]).batch, batch)
+
+            added, skipped, errors = add_story.add_story_batch(
+                add_story.load_batch_urls(batch),
+                database,
+                pages.__getitem__,
+                root=root,
+            )
+
+            self.assertEqual([entry["title"] for entry in added], ["First story", "Second story"])
+            self.assertEqual(skipped, [])
+            self.assertEqual(errors, [])
+            self.assertEqual(
+                [entry["url"] for entry in json.loads(database.read_text(encoding="utf-8"))],
+                ["https://example.com/first", "https://example.com/second"],
+            )
+
+    def test_batch_continues_after_duplicates_and_failures(self) -> None:
+        existing = {
+            "title": "Existing story",
+            "url": "https://example.com/existing",
+            "publication": "Example",
+            "description": "",
+            "image": "",
+            "date": "",
+        }
+
+        def fetch_page(url: str) -> str:
+            if url.endswith("/broken"):
+                raise add_story.StoryError("publisher unavailable")
+            return '<meta property="og:title" content="Imported story">'
+
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            database = root / "stories.json"
+            database.write_text(json.dumps([existing]), encoding="utf-8")
+
+            added, skipped, errors = add_story.add_story_batch(
+                [
+                    "https://example.com/existing",
+                    "https://example.com/broken",
+                    "https://example.com/imported",
+                ],
+                database,
+                fetch_page,
+                root=root,
+            )
+
+            self.assertEqual([entry["url"] for entry in added], ["https://example.com/imported"])
+            self.assertEqual(skipped, ["https://example.com/existing"])
+            self.assertEqual(
+                errors,
+                ["https://example.com/broken: publisher unavailable"],
+            )
+            self.assertEqual(len(json.loads(database.read_text(encoding="utf-8"))), 2)
 
     def test_json_ld_is_used_when_social_metadata_is_missing(self) -> None:
         page = """

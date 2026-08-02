@@ -4,8 +4,10 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import re
+import tempfile
 from collections.abc import Callable, Iterator
 from datetime import datetime
 from html.parser import HTMLParser
@@ -17,8 +19,17 @@ from urllib.request import Request, urlopen
 
 ROOT = Path(__file__).resolve().parents[1]
 STORIES = ROOT / "content" / "stories.json"
+PORTFOLIO = ROOT / "img" / "portfolio"
 TRACKING_PARAMETERS = {"fbclid", "gclid", "mc_cid", "mc_eid"}
 READER_PREFIX = "https://r.jina.ai/"
+MAX_IMAGE_BYTES = 25 * 1024 * 1024
+IMAGE_EXTENSIONS = {
+    "image/gif": ".gif",
+    "image/jpeg": ".jpg",
+    "image/jpg": ".jpg",
+    "image/png": ".png",
+    "image/webp": ".webp",
+}
 KNOWN_PUBLICATIONS = {
     "brighamandwomens.org": "Brigham and Women's Hospital",
     "broadinstitute.org": "Broad Institute",
@@ -333,6 +344,74 @@ def fetch_page(url: str, opener: Callable[..., Any] = urlopen) -> str:
         raise StoryError(f"Could not open {url}: {error.reason}") from error
 
 
+def fetch_image(url: str, opener: Callable[..., Any] = urlopen) -> tuple[bytes, str]:
+    try:
+        request = request_for(url, "image/webp,image/*,*/*;q=0.8")
+        with opener(request, timeout=20) as response:
+            content_length = response.headers.get("Content-Length")
+            if content_length and int(content_length) > MAX_IMAGE_BYTES:
+                limit = MAX_IMAGE_BYTES // 1024 // 1024
+                raise StoryError(f"Story image exceeds {limit} MB: {url}")
+            content_type = response.headers.get_content_type().lower()
+            image = response.read(MAX_IMAGE_BYTES + 1)
+    except (HTTPError, URLError) as error:
+        reason = getattr(error, "reason", error)
+        raise StoryError(f"Could not download story image {url}: {reason}") from error
+    except ValueError as error:
+        raise StoryError(f"Invalid story image response from {url}") from error
+    if len(image) > MAX_IMAGE_BYTES:
+        raise StoryError(f"Story image exceeds {MAX_IMAGE_BYTES // 1024 // 1024} MB: {url}")
+    if not image:
+        raise StoryError(f"Story image was empty: {url}")
+    return image, content_type
+
+
+def image_extension(url: str, content_type: str) -> str:
+    media_type = content_type.partition(";")[0].strip().lower()
+    if media_type in IMAGE_EXTENSIONS:
+        return IMAGE_EXTENSIONS[media_type]
+    if media_type and media_type not in {"application/octet-stream", "binary/octet-stream"}:
+        raise StoryError(f"Unsupported story image type {media_type!r}: {url}")
+    suffix = Path(urlsplit(url).path).suffix.lower()
+    if suffix == ".jpeg":
+        suffix = ".jpg"
+    if suffix in set(IMAGE_EXTENSIONS.values()):
+        return suffix
+    raise StoryError(f"Could not determine the story image type: {url}")
+
+
+def image_filename(entry: dict[str, str], extension: str) -> str:
+    slug = re.sub(r"[^a-z0-9]+", "-", clean_text(entry.get("title")).casefold()).strip("-")
+    slug = slug[:72].rstrip("-") or "story-image"
+    digest = hashlib.sha256(entry["url"].encode()).hexdigest()[:8]
+    return f"{slug}-{digest}{extension}"
+
+
+def save_story_image(
+    entry: dict[str, str],
+    root: Path = ROOT,
+    fetcher: Callable[[str], tuple[bytes, str]] = fetch_image,
+) -> str:
+    url = clean_text(entry.get("image"))
+    if not url or not url.startswith(("http://", "https://")):
+        return url
+    image, content_type = fetcher(url)
+    extension = image_extension(url, content_type)
+    portfolio = root / PORTFOLIO.relative_to(ROOT)
+    portfolio.mkdir(parents=True, exist_ok=True)
+    target = portfolio / image_filename(entry, extension)
+    with tempfile.NamedTemporaryFile(
+        dir=portfolio, prefix=f".{target.name}.", delete=False
+    ) as file:
+        file.write(image)
+        temporary = Path(file.name)
+    try:
+        temporary.replace(target)
+    finally:
+        temporary.unlink(missing_ok=True)
+    return target.relative_to(root).as_posix()
+
+
 def load_stories(path: Path) -> list[dict[str, Any]]:
     try:
         stories = json.loads(path.read_text(encoding="utf-8"))
@@ -378,6 +457,8 @@ def add_story(
     url: str,
     database: Path = STORIES,
     fetcher: Callable[[str], str] = fetch_page,
+    image_fetcher: Callable[[str], tuple[bytes, str]] = fetch_image,
+    root: Path = ROOT,
 ) -> dict[str, str]:
     stories = load_stories(database)
     normalized_url = canonical_url(url)
@@ -386,9 +467,41 @@ def add_story(
         raise DuplicateStory("That story is already listed.")
 
     entry = story_from_page(normalized_url, fetcher(normalized_url))
+    entry["image"] = save_story_image(entry, root, image_fetcher)
     stories.append(entry)
     database.write_text(json.dumps(stories, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     return entry
+
+
+def load_batch_urls(path: Path) -> list[str]:
+    try:
+        lines = path.read_text(encoding="utf-8-sig").splitlines()
+    except OSError as error:
+        raise StoryError(f"Could not read batch file: {path}") from error
+    urls = [line.strip() for line in lines if line.strip() and not line.lstrip().startswith("#")]
+    if not urls:
+        raise StoryError(f"Batch file contains no URLs: {path}")
+    return urls
+
+
+def add_story_batch(
+    urls: list[str],
+    database: Path = STORIES,
+    fetcher: Callable[[str], str] = fetch_page,
+    image_fetcher: Callable[[str], tuple[bytes, str]] = fetch_image,
+    root: Path = ROOT,
+) -> tuple[list[dict[str, str]], list[str], list[str]]:
+    added: list[dict[str, str]] = []
+    skipped: list[str] = []
+    errors: list[str] = []
+    for url in urls:
+        try:
+            added.append(add_story(url, database, fetcher, image_fetcher, root))
+        except DuplicateStory:
+            skipped.append(url)
+        except StoryError as error:
+            errors.append(f"{url}: {error}")
+    return added, skipped, errors
 
 
 def parse_args(arguments: list[str] | None = None) -> argparse.Namespace:
@@ -396,12 +509,17 @@ def parse_args(arguments: list[str] | None = None) -> argparse.Namespace:
     parser.add_argument("url", nargs="?", help="published story URL")
     parser.add_argument("--check", action="store_true", help="validate the existing story database")
     parser.add_argument(
+        "--batch", type=Path, metavar="FILE", help="add URLs listed one per line in FILE"
+    )
+    parser.add_argument(
         "--dry-run", action="store_true", help="fetch metadata without changing files"
     )
     parser.add_argument("--database", type=Path, default=STORIES, help=argparse.SUPPRESS)
     args = parser.parse_args(arguments)
-    if args.check == bool(args.url):
-        parser.error("provide a URL, or use --check")
+    if sum((bool(args.url), args.check, bool(args.batch))) != 1:
+        parser.error("provide a URL, use --batch FILE, or use --check")
+    if args.dry_run and not args.url:
+        parser.error("--dry-run requires a single URL")
     return args
 
 
@@ -414,6 +532,18 @@ def main(arguments: list[str] | None = None) -> int:
             if errors:
                 raise StoryError("\n".join(errors))
             print(f"{len(stories)} stories OK")
+            return 0
+        if args.batch:
+            added, skipped, errors = add_story_batch(load_batch_urls(args.batch), args.database)
+            for entry in added:
+                print(f"Added: {entry['title']}")
+            for url in skipped:
+                print(f"Skipped duplicate: {url}")
+            print(
+                f"Batch complete: {len(added)} added, {len(skipped)} skipped, {len(errors)} failed"
+            )
+            if errors:
+                raise StoryError("Failed:\n" + "\n".join(errors))
             return 0
         if args.dry_run:
             url = canonical_url(args.url)
