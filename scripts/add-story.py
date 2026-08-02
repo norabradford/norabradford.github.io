@@ -335,7 +335,7 @@ def fetch_page(url: str, opener: Callable[..., Any] = urlopen) -> str:
 
 def load_stories(path: Path) -> list[dict[str, Any]]:
     try:
-        stories = json.loads(path.read_text(encoding='utf-8'))
+        stories = json.loads(path.read_text(encoding="utf-8"))
     except (OSError, json.JSONDecodeError) as error:
         raise StoryError(f"Could not read story database: {path}") from error
     if not isinstance(stories, list):
@@ -387,7 +387,7 @@ def add_story(
 
     entry = story_from_page(normalized_url, fetcher(normalized_url))
     stories.append(entry)
-    database.write_text(json.dumps(stories, indent=2, ensure_ascii=False) + "\n")
+    database.write_text(json.dumps(stories, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     return entry
 
 

@@ -5,6 +5,7 @@ import json
 import tempfile
 import unittest
 from pathlib import Path
+from unittest import mock
 from urllib.error import HTTPError
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -18,7 +19,7 @@ SPEC.loader.exec_module(add_story)
 class AddStoryTests(unittest.TestCase):
     def setUp(self) -> None:
         self.database = ROOT / "content" / "stories.json"
-        self.stories = json.loads(self.database.read_text(encoding='utf-8'))
+        self.stories = json.loads(self.database.read_text(encoding="utf-8"))
 
     def test_existing_story_database_is_valid(self) -> None:
         self.assertEqual(add_story.validate_stories(self.stories, ROOT), [])
@@ -66,7 +67,7 @@ class AddStoryTests(unittest.TestCase):
             self.assertEqual(entry["description"], "A concise description.")
             self.assertEqual(entry["image"], "https://example.com/images/story.jpg")
             self.assertEqual(entry["date"], "2026-07-29")
-            self.assertEqual(json.loads(database.read_text(encoding='utf-8')), [entry])
+            self.assertEqual(json.loads(database.read_text(encoding="utf-8")), [entry])
 
     def test_json_ld_is_used_when_social_metadata_is_missing(self) -> None:
         page = """
@@ -83,6 +84,20 @@ class AddStoryTests(unittest.TestCase):
         self.assertEqual(entry["title"], "JSON-LD title")
         self.assertEqual(entry["publication"], "Example Journal")
         self.assertEqual(entry["date"], "2025-06-25")
+
+    def test_story_database_stays_utf8_on_non_utf8_systems(self) -> None:
+        page = '<meta property="og:title" content="A writer’s story">'
+        with tempfile.TemporaryDirectory() as directory:
+            database = Path(directory) / "stories.json"
+            database.write_text("[]\n", encoding="utf-8")
+
+            with mock.patch(
+                "pathlib.io.text_encoding",
+                side_effect=lambda encoding: encoding or "cp1252",
+            ):
+                add_story.add_story("https://example.com/story", database, lambda _: page)
+
+            self.assertIn("A writer’s story", database.read_text(encoding="utf-8"))
 
     def test_missing_publication_date_stays_blank(self) -> None:
         page = '<meta property="og:title" content="An undated story">'
