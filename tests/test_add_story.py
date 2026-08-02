@@ -18,7 +18,7 @@ SPEC.loader.exec_module(add_story)
 class AddStoryTests(unittest.TestCase):
     def setUp(self) -> None:
         self.database = ROOT / "content" / "stories.json"
-        self.stories = json.loads(self.database.read_text())
+        self.stories = json.loads(self.database.read_text(encoding='utf-8'))
 
     def test_existing_story_database_is_valid(self) -> None:
         self.assertEqual(add_story.validate_stories(self.stories, ROOT), [])
@@ -66,7 +66,7 @@ class AddStoryTests(unittest.TestCase):
             self.assertEqual(entry["description"], "A concise description.")
             self.assertEqual(entry["image"], "https://example.com/images/story.jpg")
             self.assertEqual(entry["date"], "2026-07-29")
-            self.assertEqual(json.loads(database.read_text()), [entry])
+            self.assertEqual(json.loads(database.read_text(encoding='utf-8')), [entry])
 
     def test_json_ld_is_used_when_social_metadata_is_missing(self) -> None:
         page = """

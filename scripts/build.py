@@ -142,7 +142,7 @@ def source_digest(source: Path) -> str:
 
 def load_image_manifest() -> dict[str, object]:
     try:
-        manifest = json.loads(IMAGE_MANIFEST.read_text())
+        manifest = json.loads(IMAGE_MANIFEST.read_text(encoding='utf-8'))
     except (OSError, json.JSONDecodeError):
         return {}
     return manifest if isinstance(manifest, dict) else {}
@@ -165,7 +165,7 @@ def image_recipe() -> dict[str, object]:
 def write_image_manifest(sources: dict[str, str], recipe: dict[str, object]) -> None:
     manifest = {"version": IMAGE_PIPELINE_VERSION, "recipe": recipe, "sources": sources}
     serialized = json.dumps(manifest, indent=2, sort_keys=True) + "\n"
-    if IMAGE_MANIFEST.is_file() and IMAGE_MANIFEST.read_text() == serialized:
+    if IMAGE_MANIFEST.is_file() and IMAGE_MANIFEST.read_text(encoding='utf-8') == serialized:
         return
     with tempfile.NamedTemporaryFile(
         mode="w", encoding="utf-8", dir=OPTIMIZED, prefix=".manifest.", delete=False
@@ -309,7 +309,7 @@ def portrait(class_name: str) -> str:
 
 
 def main() -> None:
-    stories = json.loads((CONTENT / "stories.json").read_text())
+    stories = json.loads((CONTENT / "stories.json").read_text(encoding='utf-8'))
     stories.sort(key=lambda item: item.get("date", ""), reverse=True)
     ensure_portfolio_thumbnails(stories)
     image_index = 0
@@ -319,10 +319,10 @@ def main() -> None:
         if story.get("image"):
             image_index += 1
     cards = "".join(cards_list)
-    research = markdown((CONTENT / "research.md").read_text())
-    about = markdown((CONTENT / "about.md").read_text())
+    research = markdown((CONTENT / "research.md").read_text(encoding='utf-8'))
+    about = markdown((CONTENT / "about.md").read_text(encoding='utf-8'))
     about = about.replace("</h1>", f"</h1>\n{portrait('about-portrait')}", 1)
-    fun = markdown((CONTENT / "fun.md").read_text())
+    fun = markdown((CONTENT / "fun.md").read_text(encoding='utf-8'))
     home = f"""<main class="section home-intro">
       <div class="home-copy">
         <p class="home-name"><a href="https://norabradford.github.io">Nora Bradford, Ph.D.</a></p>
@@ -372,7 +372,7 @@ def main() -> None:
     for filename, (title, body, current) in pages.items():
         (DIST / filename).write_text(layout(title, body, current))
 
-    cv_content = markdown((CONTENT / "cv.md").read_text())
+    cv_content = markdown((CONTENT / "cv.md").read_text(encoding='utf-8'))
     cv_content = re.sub(
         r"(<h3>[^\n]*</h3>\n<(?P<list>ul|ol)>.*?</(?P=list)>)",
         r'<div class="cv-entry">\1</div>',

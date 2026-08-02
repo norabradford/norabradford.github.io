@@ -47,14 +47,14 @@ class BuildTests(unittest.TestCase):
     def test_navigation_uses_dedicated_pages(self) -> None:
         routes = ["writing.html", "research.html", "about.html", "fun.html", "cv.html"]
         for filename in ["index.html", *routes]:
-            page = (self.dist / filename).read_text()
+            page = (self.dist / filename).read_text(encoding='utf-8')
             with self.subTest(filename=filename):
                 self.assertNotIn("index.html#", page)
                 for route in routes:
                     self.assertIn(f'href="{route}"', page)
 
     def test_home_is_only_the_compact_introduction(self) -> None:
-        page = (self.dist / "index.html").read_text()
+        page = (self.dist / "index.html").read_text(encoding='utf-8')
 
         self.assertIn("Nora Bradford, Ph.D.", page)
         self.assertIn("@norabradford", page)
@@ -63,29 +63,29 @@ class BuildTests(unittest.TestCase):
 
     def test_portrait_appears_on_home_and_about(self) -> None:
         for filename in ("index.html", "about.html"):
-            page = (self.dist / filename).read_text()
+            page = (self.dist / filename).read_text(encoding='utf-8')
             with self.subTest(filename=filename):
                 self.assertIn('src="img/about.jpg"', page)
                 self.assertIn('alt="Nora Bradford"', page)
 
     def test_portrait_height_tracks_its_responsive_width(self) -> None:
-        stylesheet = (self.dist / "style.css").read_text()
+        stylesheet = (self.dist / "style.css").read_text(encoding='utf-8')
         portrait_rule = re.search(r"\.portrait\s*{([^}]*)}", stylesheet, re.S)
 
         self.assertIsNotNone(portrait_rule)
         self.assertIn("height: auto", portrait_rule.group(1))
 
     def test_every_story_is_on_the_writing_page(self) -> None:
-        stories = json.loads((ROOT / "content" / "stories.json").read_text())
-        page = (self.dist / "writing.html").read_text()
+        stories = json.loads((ROOT / "content" / "stories.json").read_text(encoding='utf-8'))
+        page = (self.dist / "writing.html").read_text(encoding='utf-8')
 
         self.assertEqual(page.count('<article class="story">'), len(stories))
 
     def test_story_images_are_responsive_and_prioritized(self) -> None:
         parser = AssetParser()
-        parser.feed((self.dist / "writing.html").read_text())
+        parser.feed((self.dist / "writing.html").read_text(encoding='utf-8'))
         images = [image for image in parser.images if "story-image" in image.get("class", "")]
-        stories = json.loads((ROOT / "content" / "stories.json").read_text())
+        stories = json.loads((ROOT / "content" / "stories.json").read_text(encoding='utf-8'))
         stories.sort(key=lambda story: story.get("date", ""), reverse=True)
         stories_with_images = [story for story in stories if story.get("image")]
 
@@ -106,7 +106,7 @@ class BuildTests(unittest.TestCase):
                     self.assertIn("sizes", image)
 
     def test_story_images_keep_their_landscape_aspect_ratio(self) -> None:
-        stylesheet = (self.dist / "style.css").read_text()
+        stylesheet = (self.dist / "style.css").read_text(encoding='utf-8')
         image_rule = re.search(r"\.story-image\s*{([^}]*)}", stylesheet, re.S)
 
         self.assertIsNotNone(image_rule)
@@ -147,7 +147,7 @@ class BuildTests(unittest.TestCase):
         self.assertIn('fetchpriority="high"', card)
 
     def test_animated_thumbnails_keep_their_animation(self) -> None:
-        stories = json.loads((ROOT / "content" / "stories.json").read_text())
+        stories = json.loads((ROOT / "content" / "stories.json").read_text(encoding='utf-8'))
         sources = {
             ROOT / story["image"]
             for story in stories
@@ -178,7 +178,7 @@ class BuildTests(unittest.TestCase):
     def test_local_links_and_assets_exist(self) -> None:
         for page_path in self.dist.glob("*.html"):
             parser = AssetParser()
-            parser.feed(page_path.read_text())
+            parser.feed(page_path.read_text(encoding='utf-8'))
             for url in parser.urls:
                 parts = urlsplit(url)
                 if parts.scheme or parts.netloc or not parts.path:
@@ -187,7 +187,7 @@ class BuildTests(unittest.TestCase):
                     self.assertTrue((page_path.parent / parts.path).is_file())
 
     def test_new_cv_entries_are_rendered(self) -> None:
-        page = (self.dist / "cv.html").read_text()
+        page = (self.dist / "cv.html").read_text(encoding='utf-8')
 
         for text in (
             "NASW David Perlman Mentoring Program",
@@ -199,15 +199,15 @@ class BuildTests(unittest.TestCase):
                 self.assertIn(text, page)
 
     def test_nora_bradford_is_bolded_in_cv_author_lists(self) -> None:
-        source = (ROOT / "content" / "cv.md").read_text()
-        page = (self.dist / "cv.html").read_text()
+        source = (ROOT / "content" / "cv.md").read_text(encoding='utf-8')
+        page = (self.dist / "cv.html").read_text(encoding='utf-8')
 
         self.assertEqual(
             page.count("<strong>N. Bradford</strong>"), source.count("N. Bradford")
         )
 
     def test_cv_title_precedes_the_print_control(self) -> None:
-        page = (self.dist / "cv.html").read_text()
+        page = (self.dist / "cv.html").read_text(encoding='utf-8')
 
         self.assertLess(page.index("<h1>Nora Bradford</h1>"), page.index("<button"))
 

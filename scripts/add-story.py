@@ -335,7 +335,7 @@ def fetch_page(url: str, opener: Callable[..., Any] = urlopen) -> str:
 
 def load_stories(path: Path) -> list[dict[str, Any]]:
     try:
-        stories = json.loads(path.read_text())
+        stories = json.loads(path.read_text(encoding='utf-8'))
     except (OSError, json.JSONDecodeError) as error:
         raise StoryError(f"Could not read story database: {path}") from error
     if not isinstance(stories, list):
