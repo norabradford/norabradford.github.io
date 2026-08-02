@@ -344,26 +344,43 @@ def fetch_page(url: str, opener: Callable[..., Any] = urlopen) -> str:
         raise StoryError(f"Could not open {url}: {error.reason}") from error
 
 
-def fetch_image(url: str, opener: Callable[..., Any] = urlopen) -> tuple[bytes, str]:
-    try:
-        request = request_for(url, "image/webp,image/*,*/*;q=0.8")
-        with opener(request, timeout=20) as response:
-            content_length = response.headers.get("Content-Length")
-            if content_length and int(content_length) > MAX_IMAGE_BYTES:
-                limit = MAX_IMAGE_BYTES // 1024 // 1024
-                raise StoryError(f"Story image exceeds {limit} MB: {url}")
-            content_type = response.headers.get_content_type().lower()
-            image = response.read(MAX_IMAGE_BYTES + 1)
-    except (HTTPError, URLError) as error:
-        reason = getattr(error, "reason", error)
-        raise StoryError(f"Could not download story image {url}: {reason}") from error
-    except ValueError as error:
-        raise StoryError(f"Invalid story image response from {url}") from error
+def download_image(request: Request, opener: Callable[..., Any]) -> tuple[bytes, str]:
+    with opener(request, timeout=20) as response:
+        content_length = response.headers.get("Content-Length")
+        if content_length and int(content_length) > MAX_IMAGE_BYTES:
+            limit = MAX_IMAGE_BYTES // 1024 // 1024
+            raise StoryError(f"Story image exceeds {limit} MB: {request.full_url}")
+        content_type = response.headers.get_content_type().lower()
+        image = response.read(MAX_IMAGE_BYTES + 1)
     if len(image) > MAX_IMAGE_BYTES:
-        raise StoryError(f"Story image exceeds {MAX_IMAGE_BYTES // 1024 // 1024} MB: {url}")
+        raise StoryError(
+            f"Story image exceeds {MAX_IMAGE_BYTES // 1024 // 1024} MB: {request.full_url}"
+        )
     if not image:
-        raise StoryError(f"Story image was empty: {url}")
+        raise StoryError(f"Story image was empty: {request.full_url}")
     return image, content_type
+
+
+def fetch_image(url: str, opener: Callable[..., Any] = urlopen) -> tuple[bytes, str]:
+    requests = (
+        request_for(url, "image/webp,image/*,*/*;q=0.8"),
+        Request(url),
+    )
+    for index, request in enumerate(requests):
+        try:
+            return download_image(request, opener)
+        except HTTPError as error:
+            reason = getattr(error, "reason", error)
+            blocked = error.code in {401, 403, 429}
+            error.close()
+            if index == 0 and blocked:
+                continue
+            raise StoryError(f"Could not download story image {url}: {reason}") from error
+        except URLError as error:
+            raise StoryError(f"Could not download story image {url}: {error.reason}") from error
+        except ValueError as error:
+            raise StoryError(f"Invalid story image response from {url}") from error
+    raise AssertionError("image requests exhausted")
 
 
 def image_extension(url: str, content_type: str) -> str:

@@ -366,6 +366,47 @@ Urinary tract infections affect millions of people every year, and a new study p
             ],
         )
 
+    def test_fetch_retries_blocked_images_without_browser_impersonation(self) -> None:
+        image = b"story image"
+        requests: list[object] = []
+
+        class Headers:
+            @staticmethod
+            def get(_: str) -> None:
+                return None
+
+            @staticmethod
+            def get_content_type() -> str:
+                return "image/jpeg"
+
+        class Response:
+            headers = Headers()
+
+            def __enter__(self) -> Response:
+                return self
+
+            def __exit__(self, *args: object) -> None:
+                return None
+
+            @staticmethod
+            def read(_: int) -> bytes:
+                return image
+
+        def opener(request: object, timeout: int) -> Response:
+            del timeout
+            requests.append(request)
+            if len(requests) == 1:
+                error = HTTPError(request.full_url, 403, "Forbidden", {}, None)
+                error.close()
+                raise error
+            return Response()
+
+        result = add_story.fetch_image("https://www.broadinstitute.org/files/story.jpg", opener)
+
+        self.assertEqual(result, (image, "image/jpeg"))
+        self.assertTrue(requests[0].get_header("User-agent").startswith("Mozilla/5.0"))
+        self.assertIsNone(requests[1].get_header("User-agent"))
+
 
 if __name__ == "__main__":
     unittest.main()
