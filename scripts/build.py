@@ -13,6 +13,7 @@ from datetime import date
 from importlib.metadata import PackageNotFoundError
 from importlib.metadata import version as package_version
 from pathlib import Path
+from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
 CONTENT, STATIC, DIST = ROOT / "content", ROOT / "static", ROOT / "dist"
@@ -221,7 +222,7 @@ def save_thumbnail(source: Path, output: Path, width: int) -> None:
         temporary.unlink(missing_ok=True)
 
 
-def ensure_portfolio_thumbnails(stories: list[dict[str, str]]) -> None:
+def ensure_portfolio_thumbnails(stories: list[dict[str, Any]]) -> None:
     sources = {
         source
         for story in stories
@@ -265,7 +266,7 @@ def ensure_portfolio_thumbnails(stories: list[dict[str, str]]) -> None:
     write_image_manifest(current_sources, recipe)
 
 
-def story_card(story: dict[str, str], index: int) -> str:
+def story_card(story: dict[str, Any], index: int) -> str:
     url = html.escape(story["url"], quote=True)
     image = story.get("image", "")
     picture = ""
@@ -289,7 +290,11 @@ def story_card(story: dict[str, str], index: int) -> str:
     published = story.get("date", "")
     timestamp = f"<time>{html.escape(published)}</time>" if published else ""
     description = story.get("description", "")
-    summary = f"<p>{inline(description)}</p>" if description else ""
+    summary = (
+        f"<p>{inline(description)}</p>"
+        if description and story.get("show-descrition") is True
+        else ""
+    )
     extra_links = "".join(
         f'<a href="{html.escape(link["url"], quote=True)}">{inline(link["label"])}</a>'
         for link in story.get("links", [])

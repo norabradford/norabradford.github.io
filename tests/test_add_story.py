@@ -68,6 +68,7 @@ class AddStoryTests(unittest.TestCase):
             self.assertEqual(entry["url"], "https://example.com/new-story")
             self.assertEqual(entry["publication"], "Science Example")
             self.assertEqual(entry["description"], "A concise description.")
+            self.assertIs(entry["show-descrition"], False)
             self.assertRegex(
                 entry["image"], r"^img/portfolio/a-newly-reported-story-[0-9a-f]{8}\.jpg$"
             )
@@ -145,6 +146,7 @@ class AddStoryTests(unittest.TestCase):
             "url": "https://example.com/existing",
             "publication": "Example",
             "description": "",
+            "show-descrition": False,
             "image": "",
             "date": "",
         }

@@ -17,6 +17,7 @@ uv run python scripts/build.py
 **After add-story.py, go to Changes, stage all changes, and commit the new story to the repository. Remember to sync the changes to the remote repository.**
 
 `add-story.py` reads the linked page's title, description, publication, date, and social image. It saves the image in `img/portfolio`, then adds an editable entry with the local image path to `content/stories.json`.
+New stories set `"show-descrition": false`, so descriptions stay hidden unless that flag is manually changed to `true`.
 
 It refuses duplicate URLs, retries blocked publishers through Jina Reader, and leaves unavailable fields blank rather than guessing.
 Use `--dry-run` to inspect the result without adding it; `--check` validates every existing entry and local image.

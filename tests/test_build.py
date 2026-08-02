@@ -161,6 +161,23 @@ class BuildTests(unittest.TestCase):
         self.assertNotIn("srcset", card)
         self.assertIn('fetchpriority="high"', card)
 
+    def test_story_descriptions_are_hidden_unless_enabled(self) -> None:
+        story = {
+            "title": "An opt-in description",
+            "url": "https://example.com/story",
+            "publication": "Example",
+            "description": "This summary should be optional.",
+            "image": "",
+            "date": "",
+            "show-descrition": False,
+        }
+
+        self.assertNotIn(story["description"], build.story_card(story, 0))
+
+        story["show-descrition"] = True
+
+        self.assertIn(f"<p>{story['description']}</p>", build.story_card(story, 0))
+
     def test_animated_thumbnails_keep_their_animation(self) -> None:
         stories = json.loads((ROOT / "content" / "stories.json").read_text(encoding="utf-8"))
         sources = {

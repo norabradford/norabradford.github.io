@@ -43,6 +43,7 @@ KNOWN_PUBLICATIONS = {
     "spectrumnews.org": "The Transmitter",
     "thetransmitter.org": "The Transmitter",
 }
+Story = dict[str, Any]
 
 
 class StoryError(Exception):
@@ -209,7 +210,7 @@ def nested_text(value: object, *keys: str) -> str:
     return ""
 
 
-def story_from_html(url: str, page: str) -> dict[str, str]:
+def story_from_html(url: str, page: str) -> Story:
     parser = MetadataParser()
     parser.feed(page)
     structured = structured_metadata(parser.json_ld)
@@ -254,6 +255,7 @@ def story_from_html(url: str, page: str) -> dict[str, str]:
         "url": canonical_url(url),
         "publication": clean_text(publication),
         "description": clean_text(description),
+        "show-descrition": False,
         "image": urljoin(url, clean_text(image)) if image else "",
         "date": extract_date(published),
     }
@@ -265,7 +267,7 @@ def markdown_text(value: str) -> str:
     return clean_text(re.sub(r"[*_`>#]", "", value))
 
 
-def story_from_reader(url: str, page: str) -> dict[str, str]:
+def story_from_reader(url: str, page: str) -> Story:
     header, _, markdown = page.partition("Markdown Content:")
     fields = {
         key: value
@@ -294,12 +296,13 @@ def story_from_reader(url: str, page: str) -> dict[str, str]:
         "url": canonical_url(url),
         "publication": publication,
         "description": description,
+        "show-descrition": False,
         "image": image_match.group(1) if image_match else "",
         "date": extract_date(fields.get("Published Time", "") + " " + article[:1000]),
     }
 
 
-def story_from_page(url: str, page: str) -> dict[str, str]:
+def story_from_page(url: str, page: str) -> Story:
     if re.search(r"(?m)^Markdown Content:\s*$", page):
         return story_from_reader(url, page)
     return story_from_html(url, page)
@@ -397,7 +400,7 @@ def image_extension(url: str, content_type: str) -> str:
     raise StoryError(f"Could not determine the story image type: {url}")
 
 
-def image_filename(entry: dict[str, str], extension: str) -> str:
+def image_filename(entry: Story, extension: str) -> str:
     slug = re.sub(r"[^a-z0-9]+", "-", clean_text(entry.get("title")).casefold()).strip("-")
     slug = slug[:72].rstrip("-") or "story-image"
     digest = hashlib.sha256(entry["url"].encode()).hexdigest()[:8]
@@ -405,7 +408,7 @@ def image_filename(entry: dict[str, str], extension: str) -> str:
 
 
 def save_story_image(
-    entry: dict[str, str],
+    entry: Story,
     root: Path = ROOT,
     fetcher: Callable[[str], tuple[bytes, str]] = fetch_image,
 ) -> str:
@@ -442,7 +445,15 @@ def load_stories(path: Path) -> list[dict[str, Any]]:
 def validate_stories(stories: list[dict[str, Any]], root: Path = ROOT) -> list[str]:
     errors: list[str] = []
     seen_urls: set[str] = set()
-    required = {"title", "url", "publication", "description", "image", "date"}
+    required = {
+        "title",
+        "url",
+        "publication",
+        "description",
+        "show-descrition",
+        "image",
+        "date",
+    }
     for index, story in enumerate(stories, 1):
         label = clean_text(story.get("title")) or f"entry {index}"
         missing = required - story.keys()
@@ -458,6 +469,8 @@ def validate_stories(stories: list[dict[str, Any]], root: Path = ROOT) -> list[s
         published = clean_text(story.get("date"))
         if published and not re.fullmatch(r"\d{4}-\d{2}-\d{2}", published):
             errors.append(f"{label}: invalid date {published!r}")
+        if "show-descrition" in story and not isinstance(story["show-descrition"], bool):
+            errors.append(f"{label}: show-descrition must be true or false")
         image = clean_text(story.get("image"))
         if image and not image.startswith(("http://", "https://")) and not (root / image).is_file():
             errors.append(f"{label}: image not found: {image}")
@@ -476,7 +489,7 @@ def add_story(
     fetcher: Callable[[str], str] = fetch_page,
     image_fetcher: Callable[[str], tuple[bytes, str]] = fetch_image,
     root: Path = ROOT,
-) -> dict[str, str]:
+) -> Story:
     stories = load_stories(database)
     normalized_url = canonical_url(url)
     existing_urls = {canonical_url(clean_text(story.get("url"))) for story in stories}
@@ -507,8 +520,8 @@ def add_story_batch(
     fetcher: Callable[[str], str] = fetch_page,
     image_fetcher: Callable[[str], tuple[bytes, str]] = fetch_image,
     root: Path = ROOT,
-) -> tuple[list[dict[str, str]], list[str], list[str]]:
-    added: list[dict[str, str]] = []
+) -> tuple[list[Story], list[str], list[str]]:
+    added: list[Story] = []
     skipped: list[str] = []
     errors: list[str] = []
     for url in urls:
