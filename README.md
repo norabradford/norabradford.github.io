@@ -14,7 +14,7 @@ uv run python scripts/add-story.py --check # validate all existing stories and l
 uv run python scripts/build.py
 ```
 
-** After add-story.py, go to Changes, stage all changes, and commit the new story to the repository. Remember to push the changes to the remote repository.**
+**After add-story.py, go to Changes, stage all changes, and commit the new story to the repository. Remember to sync the changes to the remote repository.**
 
 `add-story.py` reads the linked page's title, description, publication, date, and social image. It saves the image in `img/portfolio`, then adds an editable entry with the local image path to `content/stories.json`.
 
