@@ -5,14 +5,16 @@ A small portfolio. Stories live in `content/stories.json`; the CV, research, Abo
 ```sh
 uv sync --locked
 uv run python scripts/preview.py       # http://localhost:8000
-uv run python scripts/preview.py 8080  # choose another port
+uv run python scripts/preview.py 8080  # choose another preview port (if 8000 is in use)
 uv run python scripts/preview.py --host 0.0.0.0  # preview from a phone on the same network
 uv run python scripts/add-story.py 'https://example.com/a-new-story'
 uv run python scripts/add-story.py --batch missing-story-links.txt
-uv run python scripts/add-story.py --dry-run 'https://example.com/a-new-story'
-uv run python scripts/add-story.py --check
+uv run python scripts/add-story.py --dry-run 'https://example.com/a-new-story' 
+uv run python scripts/add-story.py --check # validate all existing stories and local images
 uv run python scripts/build.py
 ```
+
+** After add-story.py, go to Changes, stage all changes, and commit the new story to the repository. Remember to push the changes to the remote repository.**
 
 `add-story.py` reads the linked page's title, description, publication, date, and social image. It saves the image in `img/portfolio`, then adds an editable entry with the local image path to `content/stories.json`.
 
