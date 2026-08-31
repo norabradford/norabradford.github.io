@@ -15,7 +15,9 @@ body {
   margin: 0;
   background: var(--paper);
   color: var(--ink);
-  font: 16px/1.6 ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: Ubuntu, system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
 }
 
 a {
@@ -74,7 +76,6 @@ nav a[aria-current="page"] {
 h1,
 h2,
 h3 {
-  font-family: Georgia, "Times New Roman", serif;
   line-height: 1.12;
   letter-spacing: -.02em;
 }
@@ -82,7 +83,7 @@ h3 {
 h1 {
   margin: 0;
   font-size: clamp(3.8rem, 8vw, 7.5rem);
-  font-weight: 400;
+  font-weight: 700;
 }
 
 h2 {
@@ -259,7 +260,9 @@ h3 {
 
 .home-name {
   margin: 0 0 .6rem;
-  font: 400 clamp(1.5rem, 3vw, 2rem)/1.2 Georgia, "Times New Roman", serif;
+  font-size: clamp(2.5rem, 5vw, 4.3rem);
+  font-weight: 700;
+  line-height: 1.2;
 }
 
 .home-intro .intro {
@@ -514,7 +517,8 @@ footer {
 
   body {
     color: #000;
-    font: 9pt/1.3 "Helvetica Neue", Arial, sans-serif;
+    font-size: 9pt;
+    line-height: 1.3;
     print-color-adjust: exact;
   }
 
@@ -543,7 +547,9 @@ footer {
   .cv h1 {
     margin: 0 0 2pt;
     color: #000;
-    font: 700 20pt/1.05 Georgia, "Times New Roman", serif;
+    font-size: 20pt;
+    font-weight: 700;
+    line-height: 1.05;
     letter-spacing: 0;
     text-align: center;
   }
@@ -566,7 +572,9 @@ footer {
     padding: 0 0 2pt;
     border-bottom: .7pt solid #777;
     color: #000;
-    font: 700 10.5pt/1.15 "Helvetica Neue", Arial, sans-serif;
+    font-size: 10.5pt;
+    font-weight: 700;
+    line-height: 1.15;
     letter-spacing: .07em;
     text-transform: uppercase;
     break-after: avoid-page;
@@ -576,7 +584,9 @@ footer {
   .cv h3 {
     margin: 5pt 0 1pt;
     color: #000;
-    font: 700 9.25pt/1.2 "Helvetica Neue", Arial, sans-serif;
+    font-size: 9.25pt;
+    font-weight: 700;
+    line-height: 1.2;
     letter-spacing: 0;
     break-after: avoid-page;
     page-break-after: avoid;
