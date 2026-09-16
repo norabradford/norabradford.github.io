@@ -1,0 +1,38 @@
+name: Add story
+
+on:
+  workflow_dispatch:
+    inputs:
+      story_url:
+        description: Story URL
+        required: true
+        type: string
+
+permissions:
+  contents: write
+  actions: write
+
+jobs:
+  add-story:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: astral-sh/setup-uv@v10.0.1
+        with:
+          enable-cache: true
+          python-version: "3.11"
+          version: 0.11.32
+      - run: uv run --locked python scripts/add-story.py "$STORY_URL"
+        env:
+          STORY_URL: ${{ inputs.story_url }}
+      - name: Commit and push story
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add content/stories.json img/portfolio
+          git commit -m "feat: add story"
+          git push
+      - name: Deploy site
+        run: gh workflow run deploy.yml --ref "$GITHUB_REF_NAME"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
