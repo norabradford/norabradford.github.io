@@ -830,5 +830,23 @@
     "show-descrition": false,
     "image": "img/portfolio/most-neurons-seem-to-be-jacks-of-all-trades-not-specialists-3227eb40.jpg",
     "date": "2026-07-24"
+  },
+  {
+    "title": "Migraine drugs are getting more precise. Choosing the right one is still tricky",
+    "url": "https://www.sciencenews.org/article/migraine-drugs-prevention-guidelines",
+    "publication": "Science News",
+    "description": "Migraine prevention drugs are more targeted than ever before, and new guidelines may help doctors predict which will work for each patient.",
+    "show-descrition": false,
+    "image": "img/portfolio/migraine-drugs-are-getting-more-precise-choosing-the-right-one-is-still-b24b9554.webp",
+    "date": "2026-08-31"
+  },
+  {
+    "title": "Estrogen therapy is linked to fewer signs of Alzheimer’s in the brain",
+    "url": "https://www.sciencenews.org/article/estrogen-therapy-alzheimers-brain",
+    "publication": "Science News",
+    "description": "Estrogen-only menopause therapy in older women was linked to less Alzheimer’s brain pathology at autopsy but may not prevent the disease.",
+    "show-descrition": false,
+    "image": "img/portfolio/estrogen-therapy-is-linked-to-fewer-signs-of-alzheimer-s-in-the-brain-138884fc.webp",
+    "date": "2026-08-12"
   }
 ]
