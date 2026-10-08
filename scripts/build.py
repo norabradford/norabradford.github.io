@@ -337,7 +337,7 @@ def main() -> None:
       {portrait("home-portrait")}
     </main>"""
     writing = f"""<main class="section">
-      <div class="section-title"><h1>Writing</h1><p>Over {len(stories)} stories, features, scripts, and appearances</p></div>
+      <div class="section-title"><h1>Writing</h1></div>
       <div class="stories">{cards}</div>
     </main>"""
     pages = {
