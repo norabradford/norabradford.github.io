@@ -2,6 +2,10 @@
 
 A small portfolio. Stories live in `content/stories.json`; the CV, research, About, and Fun sections are Markdown.
 
+To add a story on GitHub, go to **Actions → Add story → Run workflow**, paste the URL into **Story URL**, and click **Run workflow**.
+After a few minutes, the new story will appear in the website.
+If it fails, check the action logs for the error.
+
 ```sh
 uv sync --locked
 uv run python scripts/preview.py       # http://localhost:8000
