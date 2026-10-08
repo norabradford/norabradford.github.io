@@ -18,7 +18,6 @@ uv run python scripts/add-story.py --check # validate all existing stories and l
 uv run python scripts/build.py
 ```
 
-**After add-story.py, go to Changes, stage all changes, and commit the new story to the repository. Remember to sync the changes to the remote repository.**
 
 `add-story.py` reads the linked page's title, description, publication, date, and social image. It saves the image in `img/portfolio`, then adds an editable entry with the local image path to `content/stories.json`.
 New stories set `"show-descrition": false`, so descriptions stay hidden unless that flag is manually changed to `true`.
@@ -27,6 +26,6 @@ It refuses duplicate URLs, retries blocked publishers through Jina Reader, and l
 Use `--dry-run` to inspect the result without adding it; `--check` validates every existing entry and local image.
 Use `--batch FILE` to add several stories from a file containing one URL per line. Blank lines and lines beginning with `#` are ignored; duplicate and failed links do not stop the remaining imports.
 
-The build creates 320px and 640px WebP thumbnails in `img/optimized`. Animated sources remain animated, and unchanged images are reused on later builds. A dry run only reports the remote image URL and does not download it.
+The build creates 320px and 640px WebP thumbnails in `img/optimized`.
 
 Pushing to `main` builds and publishes the site with GitHub Pages.

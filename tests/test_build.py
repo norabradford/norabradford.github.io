@@ -46,8 +46,8 @@ class BuildTests(unittest.TestCase):
         cls.dist = ROOT / "dist"
 
     def test_navigation_uses_dedicated_pages(self) -> None:
-        routes = ["writing.html", "research.html", "about.html", "fun.html", "cv.html"]
-        for filename in ["index.html", *routes]:
+        routes = ["index.html", "research.html", "about.html", "fun.html", "cv.html"]
+        for filename in ["writing.html", *routes]:
             page = (self.dist / filename).read_text(encoding="utf-8")
             with self.subTest(filename=filename):
                 self.assertNotIn("index.html#", page)
@@ -68,20 +68,19 @@ class BuildTests(unittest.TestCase):
         finally:
             build.main()
 
-    def test_home_is_only_the_compact_introduction(self) -> None:
+    def test_home_is_the_writing_portfolio(self) -> None:
         page = (self.dist / "index.html").read_text(encoding="utf-8")
+        stories = json.loads((ROOT / "content" / "stories.json").read_text(encoding="utf-8"))
 
-        self.assertIn("Nora Bradford, Ph.D.", page)
-        self.assertIn("@norabradford", page)
-        self.assertNotIn('class="hero"', page)
-        self.assertNotIn('class="story"', page)
+        self.assertIn("<h1>Writing</h1>", page)
+        self.assertEqual(page.count('<article class="story">'), len(stories))
+        self.assertIn('<a href="index.html" aria-current="page">Writing</a>', page)
+        self.assertEqual(page, (self.dist / "writing.html").read_text(encoding="utf-8"))
 
-    def test_portrait_appears_on_home_and_about(self) -> None:
-        for filename in ("index.html", "about.html"):
-            page = (self.dist / filename).read_text(encoding="utf-8")
-            with self.subTest(filename=filename):
-                self.assertIn('src="img/about.jpg"', page)
-                self.assertIn('alt="Nora Bradford"', page)
+    def test_portrait_appears_on_about(self) -> None:
+        page = (self.dist / "about.html").read_text(encoding="utf-8")
+        self.assertIn('src="img/about.jpg"', page)
+        self.assertIn('alt="Nora Bradford"', page)
 
     def test_portrait_height_tracks_its_responsive_width(self) -> None:
         stylesheet = (self.dist / "style.css").read_text(encoding="utf-8")

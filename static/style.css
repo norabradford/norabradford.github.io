@@ -97,12 +97,6 @@ h3 {
   font-size: 1.22rem;
 }
 
-.intro {
-  margin: .65rem 0 0;
-  color: var(--muted);
-  font-size: clamp(1.15rem, 2vw, 1.45rem);
-}
-
 .section {
   padding: 80px 0;
 }
@@ -234,16 +228,6 @@ h3 {
   overflow-wrap: break-word;
 }
 
-.home-intro {
-  width: min(100%, 800px);
-  margin-inline: auto;
-  padding-block: clamp(72px, 11vw, 140px);
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(190px, 240px);
-  align-items: center;
-  gap: clamp(32px, 6vw, 64px);
-}
-
 .portrait {
   display: block;
   height: auto;
@@ -251,23 +235,6 @@ h3 {
   border: 1px solid var(--line);
   border-radius: 2px;
   object-fit: cover;
-}
-
-.home-portrait {
-  width: 100%;
-  justify-self: end;
-}
-
-.home-name {
-  margin: 0 0 .6rem;
-  font-size: clamp(2.5rem, 5vw, 4.3rem);
-  font-weight: 700;
-  line-height: 1.2;
-}
-
-.home-intro .intro {
-  margin: 0;
-  font-size: clamp(1.05rem, 2vw, 1.3rem);
 }
 
 .prose h1 {
@@ -431,10 +398,6 @@ footer {
     padding: 60px 0;
   }
 
-  .home-intro {
-    padding-block: 64px 80px;
-  }
-
   .section-title {
     display: block;
   }
@@ -458,17 +421,6 @@ footer {
 }
 
 @media (max-width:680px) {
-  .home-intro {
-    width: min(100%, 420px);
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-
-  .home-portrait {
-    width: min(100%, 240px);
-    justify-self: start;
-  }
-
   .about-portrait {
     width: min(100%, 240px);
     margin: 0 0 2rem;

@@ -84,7 +84,7 @@ def markdown(source: str) -> str:
 
 def layout(title: str, body: str, current: str | None = None) -> str:
     links = [
-        ("Writing", "writing.html"),
+        ("Writing", "index.html"),
         ("Research", "research.html"),
         ("About", "about.html"),
         ("Fun", "fun.html"),
@@ -328,20 +328,12 @@ def main() -> None:
     about = markdown((CONTENT / "about.md").read_text(encoding="utf-8"))
     about = about.replace("</h1>", f"</h1>\n{portrait('about-portrait')}", 1)
     fun = markdown((CONTENT / "fun.md").read_text(encoding="utf-8"))
-    home = f"""<main class="section home-intro">
-      <div class="home-copy">
-        <p class="home-name"><a href="https://norabradford.github.io">Nora Bradford, Ph.D.</a></p>
-        <p class="intro">Science writer and lecturer at UPenn.</p>
-        <p class="intro">Follow me on Bluesky: <a href="https://bsky.app/profile/norabradford.bsky.social">@norabradford</a></p>
-      </div>
-      {portrait("home-portrait")}
-    </main>"""
     writing = f"""<main class="section">
       <div class="section-title"><h1>Writing</h1></div>
       <div class="stories">{cards}</div>
     </main>"""
     pages = {
-        "index.html": ("Home", home, None),
+        "index.html": ("Writing", writing, "Writing"),
         "writing.html": ("Writing", writing, "Writing"),
         "research.html": (
             "Research",
