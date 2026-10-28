@@ -2,7 +2,7 @@
   "recipe": {
     "animated_method": 6,
     "animated_quality": 70,
-    "pillow": "12.3.0",
+    "pillow": "13.0.0",
     "still_quality": 76,
     "widths": [
       320,
