@@ -20,6 +20,7 @@ uv run python scripts/build.py
 
 
 `add-story.py` reads the linked page's title, description, publication, date, and social image. It saves the image in `img/portfolio`, then adds an editable entry with the local image path to `content/stories.json`.
+YouTube links use the video's title, channel, and thumbnail from YouTube's oEmbed endpoint, with the upload date from the watch page when available. YouTube descriptions are left blank.
 New stories set `"show-descrition": false`, so descriptions stay hidden unless that flag is manually changed to `true`.
 
 It refuses duplicate URLs, retries blocked publishers through Jina Reader, and leaves unavailable fields blank rather than guessing.

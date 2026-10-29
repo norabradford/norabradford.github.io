@@ -42,6 +42,146 @@ class AddStoryTests(unittest.TestCase):
         with self.assertRaises(add_story.DuplicateStory):
             add_story.add_story(tracked_url, self.database, lambda _: "")
 
+    def test_youtube_link_formats_share_a_canonical_url(self) -> None:
+        urls = [
+            "https://youtu.be/ua29hkUXwg4?is=UelaStzA0QzwKAd5",
+            "https://www.youtube.com/watch?v=ua29hkUXwg4&si=share&t=42#section",
+            "http://youtube.com/watch?feature=shared&v=ua29hkUXwg4",
+            "https://m.youtube.com/watch?v=ua29hkUXwg4",
+            "https://www.youtube.com/shorts/ua29hkUXwg4",
+            "https://www.youtube.com/embed/ua29hkUXwg4",
+            "https://www.youtube.com/live/ua29hkUXwg4",
+        ]
+        for url in urls:
+            with self.subTest(url=url):
+                self.assertEqual(
+                    add_story.canonical_url(url),
+                    "https://www.youtube.com/watch?v=ua29hkUXwg4",
+                )
+
+    def test_invalid_youtube_video_ids_are_rejected(self) -> None:
+        for url in ["https://youtu.be/", "https://youtu.be/invalid", "https://youtube.com/watch"]:
+            with self.subTest(url=url), self.assertRaises(add_story.StoryError):
+                add_story.canonical_url(url)
+        self.assertEqual(
+            add_story.canonical_url("https://example.com/watch?v=unrelated"),
+            "https://example.com/watch?v=unrelated",
+        )
+
+    def test_youtube_short_link_does_not_bypass_duplicate_check(self) -> None:
+        fetcher = mock.Mock(side_effect=AssertionError("duplicate made a network request"))
+        with self.assertRaises(add_story.DuplicateStory):
+            add_story.add_story("https://youtu.be/dUXfgzKHV1c?si=share", self.database, fetcher)
+        fetcher.assert_not_called()
+
+    def test_youtube_import_uses_video_metadata_when_watch_page_is_generic(self) -> None:
+        metadata = json.dumps(
+            {
+                "title": "Why Can't Every Shot Be a Pill?",
+                "author_name": "SciShow",
+                "thumbnail_url": "https://i.ytimg.com/vi/ua29hkUXwg4/hqdefault.jpg",
+            }
+        )
+        generic_page = """
+        <title>- YouTube</title>
+        <meta name="description" content="Enjoy the videos and music you love.">
+        """
+        pages = {
+            "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch"
+            "%3Fv%3Dua29hkUXwg4&format=json": metadata,
+            "https://www.youtube.com/watch?v=ua29hkUXwg4": generic_page,
+        }
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            database = root / "stories.json"
+            database.write_text("[]\n", encoding="utf-8")
+            image_fetcher = mock.Mock(return_value=(b"video thumbnail", "image/jpeg"))
+            entry = add_story.add_story(
+                "https://youtu.be/ua29hkUXwg4?is=UelaStzA0QzwKAd5",
+                database,
+                pages.__getitem__,
+                image_fetcher=image_fetcher,
+                root=root,
+            )
+
+            self.assertEqual(entry["title"], "Why Can't Every Shot Be a Pill?")
+            self.assertEqual(entry["url"], "https://www.youtube.com/watch?v=ua29hkUXwg4")
+            self.assertEqual(entry["publication"], "SciShow")
+            self.assertEqual(entry["description"], "")
+            self.assertEqual(entry["date"], "")
+            self.assertIs(entry["show-descrition"], False)
+            image_fetcher.assert_called_once_with(
+                "https://i.ytimg.com/vi/ua29hkUXwg4/hqdefault.jpg"
+            )
+            self.assertEqual((root / entry["image"]).read_bytes(), b"video thumbnail")
+            self.assertEqual(json.loads(database.read_text(encoding="utf-8")), [entry])
+
+    def test_youtube_watch_page_supplies_date_and_image_without_description(self) -> None:
+        metadata = json.dumps(
+            {
+                "title": "Why Can't Every Shot Be a Pill?",
+                "author_name": "SciShow",
+                "thumbnail_url": "https://i.ytimg.com/vi/ua29hkUXwg4/hqdefault.jpg",
+            }
+        )
+        page = """
+        <script type="application/ld+json">
+          {"@type":"VideoObject", "name":"Why Can't Every Shot Be a Pill?",
+           "uploadDate":"2026-10-22T10:00:20-07:00",
+           "description":"A video about drug delivery.",
+           "thumbnailUrl":"https://i.ytimg.com/vi/ua29hkUXwg4/maxresdefault.jpg"}
+        </script>
+        """
+
+        entry = add_story.fetch_story(
+            "https://youtu.be/ua29hkUXwg4",
+            lambda url: metadata if "/oembed?" in url else page,
+        )
+
+        self.assertEqual(entry["publication"], "SciShow")
+        self.assertEqual(entry["description"], "")
+        self.assertEqual(entry["date"], "2026-10-22")
+        self.assertEqual(entry["image"], "https://i.ytimg.com/vi/ua29hkUXwg4/maxresdefault.jpg")
+
+    def test_youtube_import_succeeds_when_optional_watch_page_is_blocked(self) -> None:
+        def fetcher(url: str) -> str:
+            if "/oembed?" in url:
+                return json.dumps(
+                    {
+                        "title": "A science video",
+                        "author_name": "SciShow",
+                        "thumbnail_url": "https://i.ytimg.com/vi/ua29hkUXwg4/hqdefault.jpg",
+                    }
+                )
+            raise add_story.StoryError("The publisher blocked this page")
+
+        entry = add_story.fetch_story("https://youtu.be/ua29hkUXwg4", fetcher)
+
+        self.assertEqual(entry["title"], "A science video")
+        self.assertEqual(entry["publication"], "SciShow")
+        self.assertEqual(entry["date"], "")
+
+    def test_unavailable_youtube_metadata_does_not_write_an_entry_or_image(self) -> None:
+        responses = ["<html>Video unavailable</html>", "null", "{}", '{"title":"Only a title"}']
+        for response in responses:
+            with self.subTest(response=response), tempfile.TemporaryDirectory() as directory:
+                root = Path(directory)
+                database = root / "stories.json"
+                database.write_text("[]\n", encoding="utf-8")
+                image_fetcher = mock.Mock()
+
+                with self.assertRaises(add_story.StoryError):
+                    add_story.add_story(
+                        "https://youtu.be/ua29hkUXwg4",
+                        database,
+                        mock.Mock(return_value=response),
+                        image_fetcher=image_fetcher,
+                        root=root,
+                    )
+
+                self.assertEqual(database.read_text(encoding="utf-8"), "[]\n")
+                image_fetcher.assert_not_called()
+
     def test_adds_metadata_with_attributes_in_any_order(self) -> None:
         page = """
         <html><head>

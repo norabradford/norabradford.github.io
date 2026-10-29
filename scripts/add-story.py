@@ -158,10 +158,32 @@ def extract_date(value: object) -> str:
         return ""
 
 
+def youtube_video_id(url: str) -> str:
+    parts = urlsplit(url)
+    host = parts.netloc.lower().removeprefix("www.")
+    path = parts.path.strip("/").split("/")
+    if host == "youtu.be":
+        video_id = path[0]
+    elif host in {"youtube.com", "m.youtube.com"}:
+        if path == ["watch"]:
+            video_id = dict(parse_qsl(parts.query)).get("v", "")
+        elif len(path) == 2 and path[0] in {"shorts", "embed", "live"}:
+            video_id = path[1]
+        else:
+            return ""
+    else:
+        return ""
+    if not re.fullmatch(r"[A-Za-z0-9_-]{11}", video_id):
+        raise StoryError("YouTube URL must contain a valid video ID")
+    return video_id
+
+
 def canonical_url(url: str) -> str:
     parts = urlsplit(url.strip())
     if parts.scheme not in {"http", "https"} or not parts.netloc:
         raise StoryError("Story URL must begin with http:// or https://")
+    if video_id := youtube_video_id(url.strip()):
+        return f"https://www.youtube.com/watch?v={video_id}"
     query = urlencode(
         [
             (key, value)
@@ -190,7 +212,7 @@ def structured_metadata(scripts: list[str]) -> dict[str, Any]:
             objects.extend(walk_json(json.loads(script)))
         except (json.JSONDecodeError, TypeError):
             continue
-    article_types = {"article", "newsarticle", "reportagenewsarticle", "blogposting"}
+    article_types = {"article", "newsarticle", "reportagenewsarticle", "blogposting", "videoobject"}
     for item in objects:
         item_types = item.get("@type", [])
         if isinstance(item_types, str):
@@ -218,7 +240,7 @@ def story_from_html(url: str, page: str) -> Story:
 
     title = (
         clean_text("".join(parser.heading))
-        or nested_text(structured.get("headline"), "name")
+        or nested_text(structured.get("headline") or structured.get("name"), "name")
         or meta.get("og:title")
         or meta.get("twitter:title")
         or clean_text("".join(parser.title))
@@ -241,12 +263,15 @@ def story_from_html(url: str, page: str) -> Story:
         meta.get("og:image")
         or meta.get("twitter:image")
         or nested_text(structured.get("image"), "url", "contentUrl", "@id")
+        or nested_text(structured.get("thumbnailUrl"), "url")
     )
     published = (
         meta.get("article:published_time")
         or meta.get("date")
         or meta.get("datepublished")
+        or meta.get("uploaddate")
         or nested_text(structured.get("datePublished"), "value")
+        or nested_text(structured.get("uploadDate"), "value")
         or " ".join(parser.article_text)
     )
 
@@ -345,6 +370,43 @@ def fetch_page(url: str, opener: Callable[..., Any] = urlopen) -> str:
             raise StoryError(f"The publisher blocked this page: {url}") from fallback_error
     except URLError as error:
         raise StoryError(f"Could not open {url}: {error.reason}") from error
+
+
+def fetch_story(url: str, fetcher: Callable[[str], str] = fetch_page) -> Story:
+    url = canonical_url(url)
+    if not youtube_video_id(url):
+        return story_from_page(url, fetcher(url))
+
+    oembed_url = "https://www.youtube.com/oembed?" + urlencode({"url": url, "format": "json"})
+    try:
+        metadata = json.loads(fetcher(oembed_url))
+    except (StoryError, json.JSONDecodeError) as error:
+        raise StoryError(f"Could not read YouTube video metadata: {url}") from error
+    if not isinstance(metadata, dict) or not all(
+        isinstance(metadata.get(key), str) and clean_text(metadata[key])
+        for key in ("title", "author_name", "thumbnail_url")
+    ):
+        raise StoryError(f"YouTube returned incomplete video metadata: {url}")
+
+    entry = {
+        "title": clean_text(metadata["title"]),
+        "url": url,
+        "publication": clean_text(metadata["author_name"]),
+        "description": "",
+        "show-descrition": False,
+        "image": metadata["thumbnail_url"],
+        "date": "",
+    }
+    # oEmbed works even when the watch page is a generic shell or a consent page.
+    # Use the watch page for the upload date and a higher-resolution thumbnail.
+    try:
+        details = story_from_page(url, fetcher(url))
+    except StoryError:
+        return entry
+    if clean_title(details["title"], "YouTube").casefold() == entry["title"].casefold():
+        entry["date"] = details["date"]
+        entry["image"] = details["image"] or entry["image"]
+    return entry
 
 
 def download_image(request: Request, opener: Callable[..., Any]) -> tuple[bytes, str]:
@@ -496,7 +558,7 @@ def add_story(
     if normalized_url in existing_urls:
         raise DuplicateStory("That story is already listed.")
 
-    entry = story_from_page(normalized_url, fetcher(normalized_url))
+    entry = fetch_story(normalized_url, fetcher)
     entry["image"] = save_story_image(entry, root, image_fetcher)
     stories.append(entry)
     database.write_text(json.dumps(stories, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
@@ -577,7 +639,7 @@ def main(arguments: list[str] | None = None) -> int:
             return 0
         if args.dry_run:
             url = canonical_url(args.url)
-            print(json.dumps(story_from_page(url, fetch_page(url)), indent=2))
+            print(json.dumps(fetch_story(url), indent=2))
             return 0
         entry = add_story(args.url, args.database)
         print(f"Added: {entry['title']}")
