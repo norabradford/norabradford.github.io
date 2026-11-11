@@ -875,5 +875,14 @@
     "show-descrition": false,
     "image": "img/portfolio/why-can-t-every-shot-be-a-pill-3a9a555d.jpg",
     "date": "2026-10-22"
+  },
+  {
+    "title": "How octopuses squeeze through tiny openings, step by step",
+    "url": "https://www.sciencenews.org/article/octopuses-squeeze-escape-steps-video",
+    "publication": "Science News",
+    "description": "In the lab, octopuses used specific moves to slip arms and a bulbous body through tiny holes. The finding could inspire new body plans for soft robots.",
+    "show-descrition": false,
+    "image": "img/portfolio/how-octopuses-squeeze-through-tiny-openings-step-by-step-e1b5868e.webp",
+    "date": "2026-11-05"
   }
 ]
