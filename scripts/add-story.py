@@ -82,6 +82,7 @@ class MetadataParser(HTMLParser):
             self._capture = self.json_ld
         elif tag == "h1" or (
             tag == "h2"
+            and not self._specific_heading
             and any(
                 marker in attributes.get("class", "").lower()
                 for marker in (
@@ -92,10 +93,9 @@ class MetadataParser(HTMLParser):
                 )
             )
         ):
-            if tag == "h1" or not self._specific_heading:
-                self.heading.clear()
-                self._capture = self.heading
-                self._specific_heading = tag == "h2"
+            self.heading.clear()
+            self._capture = self.heading
+            self._specific_heading = tag == "h2"
         if tag == "h1":
             self._after_heading = True
         elif tag == "p" and self._after_heading:
