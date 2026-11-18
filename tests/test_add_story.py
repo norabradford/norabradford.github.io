@@ -3,6 +3,7 @@ from __future__ import annotations
 import importlib.util
 import json
 import tempfile
+import time
 import unittest
 from pathlib import Path
 from unittest import mock
@@ -91,7 +92,11 @@ class AddStoryTests(unittest.TestCase):
             "%3Fv%3Dua29hkUXwg4&format=json": metadata,
             "https://www.youtube.com/watch?v=ua29hkUXwg4": generic_page,
         }
-        with tempfile.TemporaryDirectory() as directory:
+        with (
+            tempfile.TemporaryDirectory() as directory,
+            mock.patch.object(time, "sleep"),
+            self.assertLogs(level="WARNING"),
+        ):
             root = Path(directory)
             database = root / "stories.json"
             database.write_text("[]\n", encoding="utf-8")
@@ -143,6 +148,41 @@ class AddStoryTests(unittest.TestCase):
         self.assertEqual(entry["date"], "2026-10-22")
         self.assertEqual(entry["image"], "https://i.ytimg.com/vi/ua29hkUXwg4/maxresdefault.jpg")
 
+    def test_youtube_import_saves_date_after_watch_page_retries(self) -> None:
+        url = "https://www.youtube.com/watch?v=yNsRbQln4Vg"
+        metadata = json.dumps(
+            {
+                "title": "Is Eating Oysters Safe?",
+                "author_name": "SciShow",
+                "thumbnail_url": "https://i.ytimg.com/vi/yNsRbQln4Vg/hqdefault.jpg",
+            }
+        )
+        dated_page = """
+        <title>Is Eating Oysters Safe? - YouTube</title>
+        <meta itemprop="uploadDate" content="2026-11-17">
+        """
+        failures = [
+            (add_story.StoryError("Watch page unavailable"), "<title>- YouTube</title>"),
+            (TimeoutError("Watch page timed out"), "<title>Is Eating Oysters Safe?</title>"),
+        ]
+        for error, incomplete_page in failures:
+            with (
+                self.subTest(error=error),
+                tempfile.TemporaryDirectory() as directory,
+                mock.patch.object(time, "sleep"),
+            ):
+                root = Path(directory)
+                database = root / "stories.json"
+                database.write_text("[]\n", encoding="utf-8")
+                fetch = mock.Mock(side_effect=[metadata, error, incomplete_page, dated_page])
+
+                add_story.add_story(
+                    url, database, fetch, lambda _: (b"video thumbnail", "image/jpeg"), root
+                )
+
+                saved = json.loads(database.read_text(encoding="utf-8"))
+                self.assertEqual(saved[0]["date"], "2026-11-17")
+
     def test_youtube_import_succeeds_when_optional_watch_page_is_blocked(self) -> None:
         def fetcher(url: str) -> str:
             if "/oembed?" in url:
@@ -155,11 +195,13 @@ class AddStoryTests(unittest.TestCase):
                 )
             raise add_story.StoryError("The publisher blocked this page")
 
-        entry = add_story.fetch_story("https://youtu.be/ua29hkUXwg4", fetcher)
+        with mock.patch.object(time, "sleep"), self.assertLogs(level="WARNING") as logs:
+            entry = add_story.fetch_story("https://youtu.be/ua29hkUXwg4", fetcher)
 
         self.assertEqual(entry["title"], "A science video")
         self.assertEqual(entry["publication"], "SciShow")
         self.assertEqual(entry["date"], "")
+        self.assertIn("The publisher blocked this page", logs.output[0])
 
     def test_unavailable_youtube_metadata_does_not_write_an_entry_or_image(self) -> None:
         responses = ["<html>Video unavailable</html>", "null", "{}", '{"title":"Only a title"}']

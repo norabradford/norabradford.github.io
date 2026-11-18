@@ -6,11 +6,14 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import logging
 import re
 import tempfile
+import time
 from collections.abc import Callable, Iterator
 from datetime import datetime
 from html.parser import HTMLParser
+from http.client import HTTPException
 from pathlib import Path
 from typing import Any
 from urllib.error import HTTPError, URLError
@@ -397,15 +400,27 @@ def fetch_story(url: str, fetcher: Callable[[str], str] = fetch_page) -> Story:
         "image": metadata["thumbnail_url"],
         "date": "",
     }
-    # oEmbed works even when the watch page is a generic shell or a consent page.
-    # Use the watch page for the upload date and a higher-resolution thumbnail.
-    try:
-        details = story_from_page(url, fetcher(url))
-    except StoryError:
-        return entry
-    if clean_title(details["title"], "YouTube").casefold() == entry["title"].casefold():
-        entry["date"] = details["date"]
+    for delay in (0, 1, 2):
+        if delay:
+            time.sleep(delay)
+        try:
+            page = fetcher(url)
+        except (StoryError, OSError, HTTPException) as error:
+            reason = str(error)
+            continue
+
+        details = story_from_page(url, page)
+        if clean_title(details["title"], "YouTube").casefold() != entry["title"].casefold():
+            reason = "watch page title did not match the video title"
+            continue
+
         entry["image"] = details["image"] or entry["image"]
+        if details["date"]:
+            entry["date"] = details["date"]
+            return entry
+        reason = "watch page did not provide an upload date"
+
+    logging.warning("Could not read YouTube upload date for %s after retries: %s", url, reason)
     return entry
 
 
